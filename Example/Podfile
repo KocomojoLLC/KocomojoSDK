@@ -1,0 +1,6 @@
+use_frameworks!
+target 'KocomojoSDK_Tests' do
+  pod 'KocomojoSDK', :path => '../'
+  
+  
+end
