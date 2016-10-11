@@ -27,3 +27,4 @@ Elijah Windsor, ewindsor@gmail.com
 ## License
 
 KocomojoSDK is available under the MIT license. See the LICENSE file for more info.
+# KocomojoSDK
