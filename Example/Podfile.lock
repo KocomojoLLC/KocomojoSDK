@@ -1,0 +1,16 @@
+PODS:
+  - KocomojoSDK (0.1.0)
+
+DEPENDENCIES:
+  - KocomojoSDK (from `../`)
+
+EXTERNAL SOURCES:
+  KocomojoSDK:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  KocomojoSDK: db3df454e22c1050c2d909279da75045db4f43f5
+
+PODFILE CHECKSUM: 5ec9a9c9572f9a536faddd50dfbe4509bba64935
+
+COCOAPODS: 1.0.1
