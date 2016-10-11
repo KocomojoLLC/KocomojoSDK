@@ -33,11 +33,9 @@ TODO: Add long description of the pod here.
   # s.source_files = 'KocomojoSDK/Classes/**/*'
   s.ios.vendored_framework = 'KocomojoSDK/KocomojoSDK.framework'
 
-  # s.resource_bundles = {
-  #   'KocomojoSDK' => ['KocomojoSDK/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.prepare_command = <<-EOD
+    RUBY_SCRIPT_PATH=$PWD;
+    cd ../..;
+    SOURCE=$PWD/$(ls -d *.xcodeproj | head -n 1) ruby $RUBY_SCRIPT_PATH/addBuildPhase.rb;
+  EOD
 end
