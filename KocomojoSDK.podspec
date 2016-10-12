@@ -32,10 +32,4 @@ TODO: Add long description of the pod here.
 
   # s.source_files = 'KocomojoSDK/Classes/**/*'
   s.ios.vendored_framework = 'KocomojoSDK/KocomojoSDK.framework'
-
-  s.prepare_command = <<-EOD
-    RUBY_SCRIPT_PATH=$PWD;
-    cd ../..;
-    SOURCE=$PWD/$(ls -d *.xcodeproj | head -n 1) ruby $RUBY_SCRIPT_PATH/addBuildPhase.rb;
-  EOD
 end
