@@ -10,9 +10,8 @@
 
 @interface KocomojoButton : UIView
 
-- (void)setEnabledImageNamed:(NSString *)enabledImageName;
-- (void)setDisabledImageNamed:(NSString *)disabledImageName;
-
+@property (strong, nonatomic, nonnull) NSString *enabledImageName;
+@property (strong, nonatomic, nonnull) NSString *disabledImageName;
 @property (readonly) BOOL isEnabled;
 
 @end
