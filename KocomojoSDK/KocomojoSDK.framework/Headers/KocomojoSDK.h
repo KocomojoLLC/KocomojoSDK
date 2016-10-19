@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <KocomojoSDK/KocomojoButton.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 FOUNDATION_EXPORT double KocomojoSDKVersionNumber;
 FOUNDATION_EXPORT const unsigned char KocomojoSDKVersionString[];
 
@@ -30,3 +32,5 @@ extern NSString * const KocomojoExperiencesInRangeNotification;
 - (void)didReceiveLocalNotification:(UILocalNotification *)notification;
 
 @end
+
+NS_ASSUME_NONNULL_END
