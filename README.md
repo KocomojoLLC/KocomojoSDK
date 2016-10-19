@@ -1,7 +1,5 @@
 # KocomojoSDK
 
-## Requirements
-
 ## Installation
 
 KocomojoSDK is available through [CocoaPods](http://cocoapods.org). To install
