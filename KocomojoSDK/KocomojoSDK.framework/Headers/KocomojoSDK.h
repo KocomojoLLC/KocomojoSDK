@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <KocomojoSDK/KocomojoButton.h>
 
+typedef void(^ApiValidationBlock)(BOOL isValid);
+
 NS_ASSUME_NONNULL_BEGIN
 
 FOUNDATION_EXPORT double KocomojoSDKVersionNumber;
@@ -29,6 +31,7 @@ extern NSString * const KocomojoExperiencesInRangeNotification;
 @property (strong, nonatomic, nonnull) NSNumber *minimumSecondsBetweenPushNotifications;
 
 + (instancetype)sharedInstance;
+- (void)validateApiKey:(ApiValidationBlock)validationBlock;
 - (void)didReceiveLocalNotification:(UILocalNotification *)notification;
 
 @end
