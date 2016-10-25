@@ -9,7 +9,7 @@ it, simply add the following line to your Podfile:
 pod 'KocomojoSDK', :git => 'https://github.com/KocomojoLLC/KocomojoSDK'
 ```
 
-### Cocoapod Kocomojo Gem
+## Cocoapod Kocomojo Gem
 
 After running `pod install` there's one more step -- using the `cocoapod-kocomojo-gem` to add a build phase to your project.  It can be done with one line: 
 
@@ -23,6 +23,11 @@ If there's more than one `.xcodeproj` in your directory you'll need to specify i
 
 `pod kocomojo-sdk MyProject.xcodeproj`.
 
+
+## Next Steps
+
+- [Implementing KocomojoSDK](https://github.com/KocomojoLLC/KocomojoSDK/wiki/1.-Implementing-KocomojoSDK)
+- [Adding Notifications for KocomojoSDK](https://github.com/KocomojoLLC/KocomojoSDK/wiki/2.-Adding-Notifications-for-KocomojoSDK)
 
 ## Author
 
