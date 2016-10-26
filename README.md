@@ -27,7 +27,10 @@ If there's more than one `.xcodeproj` in your directory you'll need to specify i
 ## Next Steps
 
 - [Implementing KocomojoSDK](https://github.com/KocomojoLLC/KocomojoSDK/wiki/1.-Implementing-KocomojoSDK)
-- [Adding Notifications for KocomojoSDK](https://github.com/KocomojoLLC/KocomojoSDK/wiki/2.-Adding-Notifications-for-KocomojoSDK)
+- [Adding KocomojoSDK Button](https://github.com/KocomojoLLC/KocomojoSDK/wiki/2.-Adding-KocomojoSDKButton)
+- [Info.plist Configuration](https://github.com/KocomojoLLC/KocomojoSDK/wiki/3.-Info.plist-Configuration)
+- [Local Push Notifications](https://github.com/KocomojoLLC/KocomojoSDK/wiki/4.-Local-Push-Notifications)
+- [NSNotifications for KocomojoSDK](https://github.com/KocomojoLLC/KocomojoSDK/wiki/5.-NSNotifications-for-KocomojoSDK)
 
 ## Author
 
