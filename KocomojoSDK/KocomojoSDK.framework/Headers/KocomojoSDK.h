@@ -29,6 +29,7 @@ extern NSString * const KocomojoExperiencesInRangeNotification;
 @property (strong, nonatomic, nonnull) NSString *pushTemplatePlural;
 @property (nonatomic) BOOL showPushNotifications;
 @property (strong, nonatomic, nonnull) NSNumber *minimumSecondsBetweenPushNotifications;
+@property (nonatomic) BOOL automaticallyShowExperiences;
 
 + (instancetype)sharedInstance;
 - (void)validateApiKey:(ApiValidationBlock)validationBlock;
