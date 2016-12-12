@@ -20,6 +20,7 @@ extern NSString * const KocomojoButtonTouchedNotification;
 extern NSString * const KocomojoButtonEnabledNotification;
 extern NSString * const KocomojoFullScreenViewClosedNotification;
 extern NSString * const KocomojoExperiencesInRangeNotification;
+extern NSString * const KocomojoBluetoothDisabledNotification;
 
 @interface KocomojoSDK : NSObject
 
