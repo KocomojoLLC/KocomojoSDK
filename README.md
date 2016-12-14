@@ -6,16 +6,14 @@ KocomojoSDK is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'KocomojoSDK', :git => 'https://github.com/KocomojoLLC/KocomojoSDK'
+pod 'KocomojoSDK'
 ```
 
-## Cocoapod Kocomojo Gem
+## Cocoapod Kocomojo SDK Gem
 
-After running `pod install` there's one more step -- using the `cocoapod-kocomojo-gem` to add a build phase to your project.  It can be done with one line: 
+`gem install cocoapods-kocomojo-sdk`
 
-`curl https://s3-us-west-2.amazonaws.com/assets.kocomojo.com/install.sh -s | sh`
-
-This will install and run:
+Then run: 
 
 `pod kocomojo-sdk`.  
 
