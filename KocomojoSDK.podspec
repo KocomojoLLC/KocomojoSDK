@@ -20,14 +20,14 @@ Pod::Spec.new do |s|
   s.description      = <<-DESC
 KocomojoSDK leverages geofencing/GPS location and iBeacons to trigger native user experiences 
 designed by the client with our web editor.  
-                       DESC
+DESC
 
   s.homepage         = 'https://github.com/KocomojoLLC/KocomojoSDK'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'Commercial', :file => 'LICENSE' }
   s.author           = { 'Elijah Windsor' => 'ewindsor@gmail.com' }
   s.source           = { :git => 'https://github.com/KocomojoLLC/KocomojoSDK.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.social_media_url = 'https://twitter.com/kocomojous'
 
   s.ios.deployment_target = '8.1'
 
