@@ -3,8 +3,10 @@
 //  KocomojoSDK
 //
 //  Created by Elijah Windsor on 8/18/16.
-//  Copyright © 2016 Facebook. All rights reserved.
+//  Distribution, publication or any other public use or commercial exploitation is prohibited.
+//  Copyright 2016 Kocomojo, LLC.
 //
+
 
 #import <UIKit/UIKit.h>
 #import <KocomojoSDK/KocomojoButton.h>
