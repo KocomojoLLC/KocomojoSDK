@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'KocomojoSDK'
-  s.version          = '0.9.63'
+  s.version          = '0.9.64'
   s.summary          = 'The Official KocomojoSDK.'
 
 # This description is used to generate tags and improve search results.
@@ -28,6 +28,7 @@ DESC
   s.author           = { 'Elijah Windsor' => 'ewindsor@gmail.com' }
   s.source           = { :git => 'https://github.com/KocomojoLLC/KocomojoSDK.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/kocomojous'
+  s.documentation_url = 'https://github.com/KocomojoLLC/KocomojoSDK/'
 
   s.ios.deployment_target = '8.1'
 
