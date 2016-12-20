@@ -9,6 +9,11 @@ it, simply add the following line to your Podfile:
 pod 'KocomojoSDK'
 ```
 
+If this is a Swift project uncomment this line:
+
+`use_frameworks!`
+
+
 ## Cocoapod Kocomojo SDK Gem
 
 `gem install cocoapods-kocomojo-sdk`
