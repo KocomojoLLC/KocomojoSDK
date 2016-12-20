@@ -12,11 +12,10 @@
 		39B0C55B1E030AA700B03721 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39B0C5591E030AA700B03721 /* Main.storyboard */; };
 		39B0C55D1E030AA700B03721 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39B0C55C1E030AA700B03721 /* Assets.xcassets */; };
 		39B0C5601E030AA700B03721 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39B0C55E1E030AA700B03721 /* LaunchScreen.storyboard */; };
-		AF393F3C45F2E7E28797058F /* Pods_SimpleExampleSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 208E3390D5A1B98680293E66 /* Pods_SimpleExampleSwift.framework */; };
+		CD077FB46254EF25550E3D2B /* libPods-SimpleExampleSwift.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65BD5510122C4BE09AEDAFA3 /* libPods-SimpleExampleSwift.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		208E3390D5A1B98680293E66 /* Pods_SimpleExampleSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleExampleSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		39B0C5521E030AA700B03721 /* SimpleExampleSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleExampleSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39B0C5551E030AA700B03721 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39B0C5571E030AA700B03721 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -26,6 +25,7 @@
 		39B0C5611E030AA700B03721 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		39B0C5861E03318400B03721 /* SimpleExampleSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SimpleExampleSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		6080ED9BC96E031A52F0F39A /* Pods-SimpleExampleSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleExampleSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleExampleSwift/Pods-SimpleExampleSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		65BD5510122C4BE09AEDAFA3 /* libPods-SimpleExampleSwift.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SimpleExampleSwift.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D19F494C6E51E1B4D23FBFCA /* Pods-SimpleExampleSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleExampleSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleExampleSwift/Pods-SimpleExampleSwift.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -34,7 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF393F3C45F2E7E28797058F /* Pods_SimpleExampleSwift.framework in Frameworks */,
+				CD077FB46254EF25550E3D2B /* libPods-SimpleExampleSwift.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,7 +85,7 @@
 		E1D95DA7215581A7B2DC795D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				208E3390D5A1B98680293E66 /* Pods_SimpleExampleSwift.framework */,
+				65BD5510122C4BE09AEDAFA3 /* libPods-SimpleExampleSwift.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -204,7 +204,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		EE8D0EF70ABAF07AA964746A /* [CP] Copy Pods Resources */ = {
@@ -362,7 +362,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kocomojo.SimpleExampleSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/SimpleExampleSwift/SimpleExampleSwift-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "SimpleExampleSwift/SimpleExampleSwift-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -382,7 +382,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kocomojo.SimpleExampleSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/SimpleExampleSwift/SimpleExampleSwift-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "SimpleExampleSwift/SimpleExampleSwift-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
