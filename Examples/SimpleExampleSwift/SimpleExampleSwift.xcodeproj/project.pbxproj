@@ -12,7 +12,7 @@
 		39B0C55B1E030AA700B03721 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39B0C5591E030AA700B03721 /* Main.storyboard */; };
 		39B0C55D1E030AA700B03721 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39B0C55C1E030AA700B03721 /* Assets.xcassets */; };
 		39B0C5601E030AA700B03721 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39B0C55E1E030AA700B03721 /* LaunchScreen.storyboard */; };
-		CD077FB46254EF25550E3D2B /* libPods-SimpleExampleSwift.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 65BD5510122C4BE09AEDAFA3 /* libPods-SimpleExampleSwift.a */; };
+		65E0DBEB55C5F63FE627C267 /* Pods_SimpleExampleSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E68149CBF43E1B82D839288 /* Pods_SimpleExampleSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,8 +24,8 @@
 		39B0C55F1E030AA700B03721 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		39B0C5611E030AA700B03721 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		39B0C5861E03318400B03721 /* SimpleExampleSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SimpleExampleSwift-Bridging-Header.h"; sourceTree = "<group>"; };
+		3E68149CBF43E1B82D839288 /* Pods_SimpleExampleSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleExampleSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6080ED9BC96E031A52F0F39A /* Pods-SimpleExampleSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleExampleSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleExampleSwift/Pods-SimpleExampleSwift.debug.xcconfig"; sourceTree = "<group>"; };
-		65BD5510122C4BE09AEDAFA3 /* libPods-SimpleExampleSwift.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SimpleExampleSwift.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D19F494C6E51E1B4D23FBFCA /* Pods-SimpleExampleSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleExampleSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleExampleSwift/Pods-SimpleExampleSwift.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -34,7 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD077FB46254EF25550E3D2B /* libPods-SimpleExampleSwift.a in Frameworks */,
+				65E0DBEB55C5F63FE627C267 /* Pods_SimpleExampleSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,7 +85,7 @@
 		E1D95DA7215581A7B2DC795D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				65BD5510122C4BE09AEDAFA3 /* libPods-SimpleExampleSwift.a */,
+				3E68149CBF43E1B82D839288 /* Pods_SimpleExampleSwift.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -351,6 +351,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6080ED9BC96E031A52F0F39A /* Pods-SimpleExampleSwift.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = A3JF9L8K5Q;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -362,7 +363,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kocomojo.SimpleExampleSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "SimpleExampleSwift/SimpleExampleSwift-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -371,6 +371,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D19F494C6E51E1B4D23FBFCA /* Pods-SimpleExampleSwift.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = A3JF9L8K5Q;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -382,7 +383,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kocomojo.SimpleExampleSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "SimpleExampleSwift/SimpleExampleSwift-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

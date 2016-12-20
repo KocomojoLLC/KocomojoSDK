@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import KocomojoSDK.KocomojoButton
 
 class ViewController: UIViewController {
     
