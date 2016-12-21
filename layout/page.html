@@ -10,11 +10,17 @@
     <link type="text/css" rel="stylesheet" href="{{asset 'css/style.css'}}"/>
   </head>
 <body>
-
   <div class="container-fluid">
     <div class="row-fluid">
       <div class="span3">
-        {{~> toc }}
+        <div style="position:fixed;">
+          <div class="btn-group btn-toggle" style="margin-left:15px;"> 
+            <button class="btn btn-lg btn-default active">Objective-C</button>
+            <button class="btn btn-lg btn-default">Swift</button>
+          </div>
+          <p>&nbsp;</p>
+          {{~> toc }}
+        </div>
       </div>
       <div class="span9 main">
         {{~> content}}
@@ -24,5 +30,35 @@
 
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script type="text/javascript" src="{{asset 'js/bootstrap.min.js'}}"></script>
+  <script>
+    $('.btn-toggle').click(function(evt) {
+        if($(evt.target).hasClass('active')) { return; }
+        $(this).find('.btn').toggleClass('active');  
+
+        if($(this).find('.active').text().toLowerCase() == 'swift') {
+          $('.objc').css('display', 'none')
+          $('.swift').css('display', 'block')
+        } else {
+          $('.objc').css('display', 'block')
+          $('.swift').css('display', 'none')
+        }
+        
+        if ($(this).find('.btn-primary').size()>0) {
+          $(this).find('.btn').toggleClass('btn-primary');
+        }
+        if ($(this).find('.btn-danger').size()>0) {
+          $(this).find('.btn').toggleClass('btn-danger');
+        }
+        if ($(this).find('.btn-success').size()>0) {
+          $(this).find('.btn').toggleClass('btn-success');
+        }
+        if ($(this).find('.btn-info').size()>0) {
+          $(this).find('.btn').toggleClass('btn-info');
+        }
+        
+        $(this).find('.btn').toggleClass('btn-default');
+          
+    });
+  </script>
 </body>
 </html>
