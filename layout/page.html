@@ -10,19 +10,17 @@
     <link type="text/css" rel="stylesheet" href="{{asset 'css/style.css'}}"/>
   </head>
 <body>
-  <div class="container-fluid">
-    <div class="row-fluid">
-      <div class="span3">
-        <div style="position:fixed;">
+  <div class="container-fluid" style="height:100%;">
+    <div class="row-fluid" style="height:100%;">
+      <div class="span3 menu">
           <div class="btn-group btn-toggle" style="margin-left:15px;"> 
             <button class="btn btn-lg btn-default active">Objective-C</button>
             <button class="btn btn-lg btn-default">Swift</button>
           </div>
           <p>&nbsp;</p>
           {{~> toc }}
-        </div>
       </div>
-      <div class="span9 main">
+      <div class="span9 main" style="overflow-y:auto;height:100%;">
         {{~> content}}
       </div>
     </div>

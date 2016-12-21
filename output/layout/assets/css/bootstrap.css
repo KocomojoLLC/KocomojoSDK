@@ -239,7 +239,7 @@ a {
 
 a:hover,
 a:focus {
-  color: #1dd2af;
+  color: 24c9ff;
   text-decoration: underline;
 }
 
@@ -3599,7 +3599,7 @@ input[type="submit"].btn.btn-mini {
 
 .btn-link:hover,
 .btn-link:focus {
-  color: #1dd2af;
+  color: 24c9ff;
   text-decoration: underline;
   background-color: transparent;
 }
@@ -4171,8 +4171,8 @@ input[type="submit"].btn.btn-mini {
 
 .nav .dropdown-toggle:hover .caret,
 .nav .dropdown-toggle:focus .caret {
-  border-top-color: #1dd2af;
-  border-bottom-color: #1dd2af;
+  border-top-color: 24c9ff;
+  border-bottom-color: 24c9ff;
 }
 
 /* move down carets for tabs */
@@ -6203,7 +6203,7 @@ p {
 }
 
 .navbar .brand:hover {
-  color: #1dd2af;
+  color: 24c9ff;
 }
 
 .navbar .navbar-inner {
