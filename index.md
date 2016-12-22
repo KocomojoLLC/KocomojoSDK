@@ -200,7 +200,7 @@ Note that if you want to generate your own Push Notifications using the names of
 
 &nbsp;
 
-## NSNotifications 
+## Notifications 
 
 &nbsp;
 
