@@ -3,8 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>KocomojoSDK for iOS</title>
-    <link type="text/css" rel="stylesheet" href="assets/css/bootstrap.css"/>
-    <link type="text/css" rel="stylesheet" href="assets/css/bootstrap-responsive.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css"/>
     <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
     <link type="text/css" rel="stylesheet" href="assets/css/style.css"/>
@@ -12,27 +11,43 @@
 <body>
   <div class="container-fluid">
     <div class="row-fluid">
-      <div class="span3">
-        <div style="position:fixed;">
+      <div class="col-xs-3">
+        <div style="position:fixed;height:calc(100% - 120px)">
           <div class="btn-group btn-toggle" style="margin-left:15px;"> 
             <button class="btn btn-lg btn-default active">Objective-C</button>
             <button class="btn btn-lg btn-default">Swift</button>
           </div>
-          <p>&nbsp;</p><ul class="nav nav-list">
+          <p>&nbsp;</p><ul class="nav nav-list" style="height:100%;overflow-y:scroll;">
     <li class="sidebar-header-1"><a href="#kocomojosdk-for-ios">KocomojoSDK for iOS</a></li>
     <li class="sidebar-header-2"><a href="#installation">Installation</a></li>
     <li class="sidebar-header-3"><a href="#run-kocomojo-sdk-gem">Run Kocomojo SDK Gem</a></li>
     <li class="sidebar-header-2"><a href="#implementation">Implementation</a></li>
     <li class="sidebar-header-3"><a href="#api-key-validation">API Key validation</a></li>
+    <li class="sidebar-header-2"><a href="#adding-the-button">Adding the Button</a></li>
+    <li class="sidebar-header-2"><a href="#info-plist">Info.plist</a></li>
+    <li class="sidebar-header-2"><a href="#local-push-notifications">Local Push Notifications</a></li>
+    <li class="sidebar-header-3"><a href="#push-templates">Push Templates</a></li>
+    <li class="sidebar-header-3"><a href="#open-app-from-push">Open app from Push</a></li>
+    <li class="sidebar-header-2"><a href="#nsnotifications">NSNotifications</a></li>
+    <li class="sidebar-header-3"><a href="#button-touched">Button Touched</a></li>
+    <li class="sidebar-header-3"><a href="#button-enabled">Button Enabled</a></li>
+    <li class="sidebar-header-3"><a href="#full-screen-view-closed">Full Screen View Closed</a></li>
+    <li class="sidebar-header-3"><a href="#experiences-in-range">Experiences In Range</a></li>
+    <li class="sidebar-header-3"><a href="#bluetooth-off">Bluetooth Off</a></li>
 </ul>        </div>
       </div>
-      <div class="span9 main"><h1 id="kocomojosdk-for-ios"><a class="header-link" href="#kocomojosdk-for-ios"></a>KocomojoSDK for iOS</h1>
+      <div class="col-xs-9 main"><h1 id="kocomojosdk-for-ios"><a class="header-link" href="#kocomojosdk-for-ios"></a>KocomojoSDK for iOS</h1>
 <p>&nbsp;</p>
 <h2 id="installation"><a class="header-link" href="#installation"></a>Installation</h2>
 <p>KocomojoSDK is available through <a href="http://cocoapods.org">CocoaPods</a>. To install
 it, simply add the following line to your Podfile:</p>
-<pre class="hljs"><code>pod <span class="hljs-string">'KocomojoSDK'</span></code></pre><p>If this is a Swift project uncomment this line::</p>
-<pre class="hljs"><code>use_frameworks!</code></pre><p>&nbsp;</p>
+<pre class="hljs"><code>pod <span class="hljs-string">'KocomojoSDK'</span></code></pre><div class="swift">
+<p>Make sure to uncomment this line:</p>
+
+<pre class="hljs"><code>use_frameworks!</code></pre>
+</div>
+
+<p>&nbsp;</p>
 <h3 id="run-kocomojo-sdk-gem"><a class="header-link" href="#run-kocomojo-sdk-gem"></a>Run Kocomojo SDK Gem</h3>
 <p>After running <code>pod install</code> there&#39;s one more step -- using the <code>cocoapod-kocomojo-gem</code> to add a build phase to your project.  To install:</p>
 <pre class="hljs"><code>gem install cocoapods-kocomojo-sdk</code></pre><p>then run: </p>
@@ -64,9 +79,212 @@ sharedInstance.radiusInMiles = 15.0; // set it to number of miles
 sharedInstance.showPushNotifications = true; // this is optional, more information below</code></pre>
 </div>
 
+<p>&nbsp;</p>
 <h3 id="api-key-validation"><a class="header-link" href="#api-key-validation"></a>API Key validation</h3>
-<p>You can validate your api key directly by calling <code>[[KocomojoSDK sharedInstance]validateApiKey:^(BOOL isValid) { ... }</code>.  Alternatively you can also look for <code>KocomojoSDK: Unable to authenticate, please check your API Key</code> in logs.</p>
-      </div>
+<p>You can validate your api key directly by calling </p>
+<div class="objc">
+<pre class="hljs"><code>[[KocomojoSDK sharedInstance]validateApiKey:^(BOOL isValid) { ... }</code></pre>
+</div>
+
+<div class="swift">
+<pre class="hljs"><code>sharedInstance.validateApiKey { (valid: Bool) in ...</code></pre>
+</div>
+
+<p>Alternatively you can also look for an error message in logs.</p>
+<p>&nbsp;</p>
+<h2 id="adding-the-button"><a class="header-link" href="#adding-the-button"></a>Adding the Button</h2>
+<div class="objc">
+<p>In the View Controller where you&#39;d like to put the button import KocomojoButton.h:</p>
+
+<p><code>#import &lt;KocomojoSDK/KocomojoButton.h&gt;</code></p>
+
+<p>Inside of <code>viewDidLoad</code>:</p>
+
+<pre class="hljs"><code>KocomojoButton *button = [[KocomojoButton alloc]initWithFrame:(CGRect){0, 0, 200, 200}];
+button.center = self.view.center;
+[button setEnabledImageName:@&quot;buttonEnabled&quot;];    // both images are 
+[button setDisabledImageName:@&quot;buttonDisabled&quot;];  // from xcassets
+[self.view addSubview:button];
+</code></pre>
+</div>
+
+<div class="swift">
+<p>In the View Controller where you&#39;d like to put the button import import KocomojoSDK.KocomojoButton:</p>
+
+<p><code>import KocomojoSDK.KocomojoButton</code></p>
+
+<p>Inside of <code>viewDidLoad()</code>:</p>
+
+<pre class="hljs"><code>let button = KocomojoButton(frame:CGRect(x: 0, y: 0, width: 200, height: 200));
+button.center = self.view.center;
+button.enabledImageName = &quot;buttonEnabled&quot;;    // both images are 
+button.disabledImageName = &quot;buttonDisabled&quot;;  // from xcassets
+self.view.addSubview(button);
+</code></pre>
+</div>
+
+<p>You can also implement this in Storyboard, just create a View inside the ViewController and change it&#39;s Class to <code>KocomojoButton</code>.<br>This can then be connected to an <code>IBOutlet</code> and enabled / disabled images can be assigned like above.  </p>
+<p>&nbsp;</p>
+<h2 id="info-plist"><a class="header-link" href="#info-plist"></a>Info.plist</h2>
+<p>These are the key/value pairs you&#39;ll need to add to your Info.plist: </p>
+<p><strong>NSLocationAlwaysUsageDescription</strong> (<a href="https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18">more info</a>)</p>
+<p>For example: </p>
+<blockquote>
+<p>&quot;Please enable location tracking in order to receive promotion notifications&quot;</p>
+</blockquote>
+<p><strong>NSBluetoothPeripheralUsageDescription</strong> (<a href="https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW20">more info</a>)</p>
+<p>For example:</p>
+<blockquote>
+<p>&quot;Please enable bluetooth to monitor beacons in order to receive promotion notifications&quot;</p>
+</blockquote>
+<p>&nbsp;</p>
+<h2 id="local-push-notifications"><a class="header-link" href="#local-push-notifications"></a>Local Push Notifications</h2>
+<p>You can have KocomojoSDK send Push Notifications whenever an Experiences comes in range. </p>
+<p>To enable this:</p>
+<div class="objc">
+<pre class="hljs"><code>[[KocomojoSDK sharedInstance]setShowPushNotifications:YES];</code></pre>
+</div>
+
+<div class="swift">
+<pre class="hljs"><code>KocomojoSDK.sharedInstance().showPushNotifications = true;</code></pre>
+</div>
+
+
+<p>&nbsp;</p>
+<h3 id="push-templates"><a class="header-link" href="#push-templates"></a>Push Templates</h3>
+<p>There are 2 templates that can be customized by the client.  One is for <code>pushTemplateSingular</code> (when there&#39;s one Experience in range) and the other is <code>pushTemplatePlural</code> (when there&#39;s more than one Experience in range.)</p>
+<p>They can be assigned like:</p>
+<div class="objc">
+<pre class="hljs"><code>[[KocomojoSDK sharedInstance] setPushTemplateSingular:@&quot;An awesome experience <strong>NAME</strong> has just entered your sphere&quot;];
+[[KocomojoSDK sharedInstance] setPushTemplatePlural:@&quot;<strong>NAMES</strong> are all available!!!&quot;];</code></pre>
+</div>
+
+<div class="swift">
+<pre class="hljs"><code>KocomojoSDK.sharedInstance().pushTemplateSingular = &quot;An awesome experience <strong>NAME</strong> has just entered your sphere&quot;;
+KocomojoSDK.sharedInstance().pushTemplatePlural = &quot;<strong>NAMES</strong> are all available!!!&quot;;</code></pre>
+</div>
+
+<p>&nbsp;</p>
+<h3 id="open-app-from-push"><a class="header-link" href="#open-app-from-push"></a>Open app from Push</h3>
+<div class="objc">
+<p>When the user opens a local push notification generated by the SDK, you can have it automatically &quot;touch&quot; the button for them by implementing the following:</p>
+<pre class="hljs"><code>- (void)application:(UIApplication &#42;)application didReceiveLocalNotification:(UILocalNotification &#42;)notification
+{
+  [[KocomojoSDK sharedInstance] didReceiveLocalNotification:notification];
+}</code></pre>
+</div>
+
+<div class="swift">
+<p>When the user opens a local push notification generated by the SDK, you can have it automatically &quot;touch&quot; the button for them by implementing the following:</p>
+<pre class="hljs"><code>func application(_ application: UIApplication, didReceive notification: UILocalNotification)
+{
+  KocomojoSDK.sharedInstance().didReceive(notification);
+}</code></pre>
+</div>
+
+
+
+<p>Note that if you want to generate your own Push Notifications using the names of the experiences as they come into range, you can implement a listener for <code>KocomojoExperiencesInRangeNotification</code> (more information in the next section)</p>
+<p>&nbsp;</p>
+<h2 id="nsnotifications"><a class="header-link" href="#nsnotifications"></a>NSNotifications</h2>
+<div class="row">
+  <div class="col-xs-6">Button Touched</div><div class="col-xs-6">KocomojoButtonTouchedNotification</div>
+</div>
+
+<ul class="list">
+<li>Button Enabled (<code>KocomojoButtonEnabledNotification</code>) and </li>
+<li>Full Screen View Closed (<code>KocomojoFullScreenViewClosedNotification</code>)</li>
+<li>Experiences In Range (<code>KocomojoExperiencesInRangeNotification</code>) </li>
+<li>Bluetooth Disabled (<code>KocomojoBluetoothDisabledNotification</code>)</li>
+</ul>
+<p>&nbsp;</p>
+<h3 id="button-touched"><a class="header-link" href="#button-touched"></a>Button Touched</h3>
+<p>This simply tells when the button is touched, whether or not it is enabled.  </p>
+<pre class="hljs"><code>[[<span class="hljs-name">NSNotificationCenter</span> defaultCenter]addObserver:self selector:@selector(<span class="hljs-name">buttonTouched:</span>) name:KocomojoButtonTouchedNotification object:nil]<span class="hljs-comment">;</span>
+
+...
+
+- (<span class="hljs-name">void</span>)buttonTouched:(<span class="hljs-name">NSNotification</span> *)notification {
+  NSLog(<span class="hljs-name">@</span><span class="hljs-string">"Button Touched!"</span>)<span class="hljs-comment">;</span>
+}</code></pre><p>&nbsp;</p>
+<h3 id="button-enabled"><a class="header-link" href="#button-enabled"></a>Button Enabled</h3>
+<p>This is called when the button is either enabled or disabled.  The <code>NSDictionary</code> in the <code>notification.object</code> contains <code>enabled</code>. </p>
+<pre class="hljs"><code>[[<span class="hljs-name">NSNotificationCenter</span> defaultCenter]addObserver:self selector:@selector(<span class="hljs-name">buttonEnabled:</span>) name:KocomojoButtonEnabledNotification object:nil]<span class="hljs-comment">;</span>
+
+...
+
+- (<span class="hljs-name">void</span>)buttonEnabled:(<span class="hljs-name">NSNotification</span> *)notification {
+  NSDictionary *notificationDic = notification.object<span class="hljs-comment">;</span>
+
+  if([<span class="hljs-name">notificationDic</span>[<span class="hljs-name">@</span><span class="hljs-string">"enabled"</span>]boolValue] == YES) {
+    NSLog(<span class="hljs-name">@</span><span class="hljs-string">"Enabled!!"</span>)<span class="hljs-comment">;</span>
+  } else {
+    NSLog(<span class="hljs-name">@</span><span class="hljs-string">"Disabled!!"</span>)<span class="hljs-comment">;</span>
+  }
+}</code></pre><p>&nbsp;</p>
+<h3 id="full-screen-view-closed"><a class="header-link" href="#full-screen-view-closed"></a>Full Screen View Closed</h3>
+<p>This is called when the full screen view is closed.</p>
+<pre class="hljs"><code>[[<span class="hljs-name">NSNotificationCenter</span> defaultCenter]addObserver:self selector:@selector(<span class="hljs-name">fullScreenViewClosed:</span>) name:KocomojoFullScreenViewClosedNotification object:nil]<span class="hljs-comment">;</span>
+
+...
+
+- (<span class="hljs-name">void</span>)fullScreenViewClosed:(<span class="hljs-name">NSNotification</span> *)notification {
+  NSLog(<span class="hljs-name">@</span><span class="hljs-string">"Full Screen View Closed"</span>)<span class="hljs-comment">;</span>
+}</code></pre><p>&nbsp;</p>
+<h3 id="experiences-in-range"><a class="header-link" href="#experiences-in-range"></a>Experiences In Range</h3>
+<p>When experiences come in range (or go out of range) this will be posted.  The <code>notification.data</code> will be an array containing <code>id</code>, <code>name</code>, and <code>inRange</code> (true or false) of each experience.  </p>
+<p>One thing to note is that this will only be posted with experiences who&#39;s <code>inRange</code> status changes.  Once an experiences comes <code>inRange</code>, the only other time it will appears in the <code>notification.data</code> array is when <code>inRange</code> becomes false.  </p>
+<pre class="hljs"><code>[[<span class="hljs-name">NSNotificationCenter</span> defaultCenter]addObserver:self selector:@selector(<span class="hljs-name">experiencesInRange:</span>) name:KocomojoExperiencesInRangeNotification object:nil]<span class="hljs-comment">;</span>
+
+...
+
+- (<span class="hljs-name">void</span>)experiencesInRange:(<span class="hljs-name">NSNotification</span> *)notification {
+  NSArray *experiencesInRangeArray = notification.object<span class="hljs-comment">;</span>
+
+  NSLog(<span class="hljs-name">@</span><span class="hljs-string">"Experiences In Range: %@"</span>, experiencesInRangeArray)<span class="hljs-comment">;</span>
+}</code></pre><p>Outputs:</p>
+<pre class="hljs"><code>Experiences In Range: (
+    {
+        id = <span class="hljs-number">155</span><span class="hljs-comment">;</span>
+        inRange = <span class="hljs-number">0</span><span class="hljs-comment">;</span>
+        name = Quiznos<span class="hljs-comment">;</span>
+        <span class="hljs-keyword">boundaries </span>=         (
+                        {
+                id = <span class="hljs-number">6</span><span class="hljs-comment">;</span>
+                latitude = <span class="hljs-string">"35.898231"</span><span class="hljs-comment">;</span>
+                longitude = <span class="hljs-string">"-78.51344"</span><span class="hljs-comment">;</span>
+                maxLatitude = <span class="hljs-string">"35.97057645175178"</span><span class="hljs-comment">;</span>
+                maxLongitude = <span class="hljs-string">"-78.4241312022986"</span><span class="hljs-comment">;</span>
+                minLatitude = <span class="hljs-string">"35.82588554824822"</span><span class="hljs-comment">;</span>
+                minLongitude = <span class="hljs-string">"-78.60274879770142"</span><span class="hljs-comment">;</span>
+                radius = <span class="hljs-number">5</span><span class="hljs-comment">;</span>
+                radiusMetric = <span class="hljs-string">"&lt;null&gt;"</span><span class="hljs-comment">;</span>
+                type = geoshape<span class="hljs-comment">;</span>
+            }
+        )<span class="hljs-comment">;</span>
+    },
+        {
+        id = <span class="hljs-number">163</span><span class="hljs-comment">;</span>
+        inRange = <span class="hljs-number">0</span><span class="hljs-comment">;</span>
+        name = <span class="hljs-string">"Park Plaza Cinema Promo"</span><span class="hljs-comment">;</span>
+        <span class="hljs-keyword">boundaries </span>= ...
+    },
+        {
+        id = <span class="hljs-number">163</span><span class="hljs-comment">;</span>
+        inRange = <span class="hljs-number">0</span><span class="hljs-comment">;</span>
+        name = <span class="hljs-string">"Park Plaza Cinema Promo"</span><span class="hljs-comment">;</span>
+        <span class="hljs-keyword">boundaries </span>= ...
+    }
+)</code></pre><p>&nbsp;</p>
+<h3 id="bluetooth-off"><a class="header-link" href="#bluetooth-off"></a>Bluetooth Off</h3>
+<p>This is called if the user launches the app with Bluetooth disabled, or if they disable Bluetooth while in the app.</p>
+<pre class="hljs"><code>[[NSNotificationCenter defaultCenter]<span class="hljs-string">addObserver:</span>self <span class="hljs-string">selector:</span><span class="hljs-meta">@selector</span>(<span class="hljs-string">bluetoothDisabled:</span>) KocomojoBluetoothDisabledNotification <span class="hljs-string">object:</span>nil];
+
+...
+
+- (<span class="hljs-keyword">void</span>)<span class="hljs-string">bluetoothDisabled:</span>(NSNotification *)notification {
+  <span class="hljs-comment">// Notify the user to turn Bluetooth on</span>
+}</code></pre>      </div>
     </div>
   </div>
 
@@ -74,6 +292,7 @@ sharedInstance.showPushNotifications = true; // this is optional, more informati
   <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
   <script>
     $('.btn-toggle').click(function(evt) {
+        $(evt.target).blur()
         if($(evt.target).hasClass('active')) { return; }
         $(this).find('.btn').toggleClass('active');  
 
@@ -98,9 +317,11 @@ sharedInstance.showPushNotifications = true; // this is optional, more informati
           $(this).find('.btn').toggleClass('btn-info');
         }
         
-        $(this).find('.btn').toggleClass('btn-default');
+//        $(this).find('.btn').toggleClass('btn-default');
           
     });
+
+    $('.swift').css('display', 'none') // default to Obj-C 
   </script>
 </body>
 </html>
