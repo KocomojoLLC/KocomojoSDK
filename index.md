@@ -49,7 +49,7 @@ pod kocomojo-sdk MyProject.xcodeproj
 
   <p>Add these lines in `application:didFinishLaunchingWithOptions:`: </p>
 
-  <pre class="hljs"><code>KocomojoSDK *sharedInstance = [KocomojoSDK sharedInstance];
+  <pre class="hljs"><code>KocomojoSDK &#42;sharedInstance = [KocomojoSDK sharedInstance];
 [sharedInstance setApiKey:@"YOUR_API_KEY_HERE"];
 [sharedInstance setRadiusInMiles:[NSNumber numberWithFloat:15.0f]];  // set it to number of miles
 [sharedInstance setShowPushNotifications:YES];  // this is optional, more information below</code>
@@ -95,7 +95,7 @@ Alternatively you can also look for an error message in logs.
 
 <p>Inside of `viewDidLoad`:</p>
 
-<pre class="hljs"><code>KocomojoButton *button = [[KocomojoButton alloc]initWithFrame:(CGRect){0, 0, 200, 200}];
+<pre class="hljs"><code>KocomojoButton &#42;button = [[KocomojoButton alloc]initWithFrame:(CGRect){0, 0, 200, 200}];
 button.center = self.view.center;
 [button setEnabledImageName:@"buttonEnabled"];    // both images are 
 [button setDisabledImageName:@"buttonDisabled"];  // from xcassets
@@ -231,7 +231,7 @@ This simply tells when the button is touched, whether or not it is enabled.
 
 ...
 
-- (void)buttonTouched:(NSNotification *)notification {
+- (void)buttonTouched:(NSNotification &#42;)notification {
   NSLog(@"Button Touched!");
 }
 </code></pre>
@@ -259,8 +259,8 @@ This is called when the button is either enabled or disabled.  The `NSDictionary
 
 ...
 
-- (void)buttonEnabled:(NSNotification *)notification {
-  NSDictionary *notificationDic = notification.object;
+- (void)buttonEnabled:(NSNotification &#42;)notification {
+  NSDictionary &#42;notificationDic = notification.object;
   
   if([notificationDic[@"enabled"]boolValue] == YES) {
     NSLog(@"Enabled!!");
@@ -301,7 +301,7 @@ This is called when the full screen view is closed.
 
 ...
 
-- (void)fullScreenViewClosed:(NSNotification *)notification {
+- (void)fullScreenViewClosed:(NSNotification &#42;)notification {
   NSLog(@"Full Screen View Closed");
 }</code></pre>
 </div>
@@ -330,8 +330,8 @@ One thing to note is that this will only be posted with experiences who's `inRan
 
 ...
 
-- (void)experiencesInRange:(NSNotification *)notification {
-  NSArray *experiencesInRangeArray = notification.object;
+- (void)experiencesInRange:(NSNotification &#42;)notification {
+  NSArray &#42;experiencesInRangeArray = notification.object;
   
   NSLog(@"Experiences In Range: %@", experiencesInRangeArray);
 }</code></pre>
@@ -360,7 +360,7 @@ This is called if the user launches the app with Bluetooth disabled, or if they 
 
 ...
 
-- (void)bluetoothDisabled:(NSNotification *)notification {
+- (void)bluetoothDisabled:(NSNotification &#42;)notification {
   // Notify the user to turn Bluetooth on
 }</code></pre>
 </div>

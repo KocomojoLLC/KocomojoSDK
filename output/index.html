@@ -60,7 +60,7 @@ it, simply add the following line to your Podfile:</p>
 
   <p>Add these lines in <code>application:didFinishLaunchingWithOptions:</code>: </p>
 
-  <pre class="hljs"><code>KocomojoSDK *sharedInstance = [KocomojoSDK sharedInstance];
+  <pre class="hljs"><code>KocomojoSDK &#42;sharedInstance = [KocomojoSDK sharedInstance];
 [sharedInstance setApiKey:@&quot;YOUR_API_KEY_HERE&quot;];
 [sharedInstance setRadiusInMiles:[NSNumber numberWithFloat:15.0f]];  // set it to number of miles
 [sharedInstance setShowPushNotifications:YES];  // this is optional, more information below</code>
@@ -100,7 +100,7 @@ sharedInstance.showPushNotifications = true; // this is optional, more informati
 
 <p>Inside of <code>viewDidLoad</code>:</p>
 
-<pre class="hljs"><code>KocomojoButton *button = [[KocomojoButton alloc]initWithFrame:(CGRect){0, 0, 200, 200}];
+<pre class="hljs"><code>KocomojoButton &#42;button = [[KocomojoButton alloc]initWithFrame:(CGRect){0, 0, 200, 200}];
 button.center = self.view.center;
 [button setEnabledImageName:@&quot;buttonEnabled&quot;];    // both images are 
 [button setDisabledImageName:@&quot;buttonDisabled&quot;];  // from xcassets
@@ -212,7 +212,7 @@ KocomojoSDK.sharedInstance().pushTemplatePlural = &quot;<strong>NAMES</strong> a
 
 ...
 
-- (void)buttonTouched:(NSNotification *)notification {
+- (void)buttonTouched:(NSNotification &#42;)notification {
   NSLog(@&quot;Button Touched!&quot;);
 }
 </code></pre>
@@ -237,8 +237,8 @@ func buttonTouched(notification: Notification) {
 
 ...
 
-- (void)buttonEnabled:(NSNotification <em>)notification {
-  NSDictionary </em>notificationDic = notification.object;
+- (void)buttonEnabled:(NSNotification &#42;)notification {
+  NSDictionary &#42;notificationDic = notification.object;
 
   if([notificationDic[@&quot;enabled&quot;]boolValue] == YES) {
     NSLog(@&quot;Enabled!!&quot;);
@@ -276,7 +276,7 @@ func buttonEnabled(notification: Notification) {
 
 ...
 
-- (void)fullScreenViewClosed:(NSNotification *)notification {
+- (void)fullScreenViewClosed:(NSNotification &#42;)notification {
   NSLog(@&quot;Full Screen View Closed&quot;);
 }</code></pre>
 </div>
@@ -300,8 +300,8 @@ func fullScreenViewClosed(notification: Notification) {
 
 ...
 
-- (void)experiencesInRange:(NSNotification <em>)notification {
-  NSArray </em>experiencesInRangeArray = notification.object;
+- (void)experiencesInRange:(NSNotification &#42;)notification {
+  NSArray &#42;experiencesInRangeArray = notification.object;
 
   NSLog(@&quot;Experiences In Range: %@&quot;, experiencesInRangeArray);
 }</code></pre>
@@ -327,7 +327,7 @@ func experiencesInRange(notification: Notification) {
 
 ...
 
-- (void)bluetoothDisabled:(NSNotification *)notification {
+- (void)bluetoothDisabled:(NSNotification &#42;)notification {
   // Notify the user to turn Bluetooth on
 }</code></pre>
 </div>
