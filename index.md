@@ -202,14 +202,23 @@ Note that if you want to generate your own Push Notifications using the names of
 
 ## NSNotifications 
 
-<div class="row">
-  <div class="col-xs-6">Button Touched</div><div class="col-xs-6">KocomojoButtonTouchedNotification</div>
+&nbsp;
+
+<div class="objc">
+<p>Button Touched (`KocomojoButtonTouchedNotification`)</p>
+<p>Button Enabled (`KocomojoButtonEnabledNotification`)</p>
+<p>Full Screen View Closed (`KocomojoFullScreenViewClosedNotification`)</p>
+<p>Experiences In Range (`KocomojoExperiencesInRangeNotification`)</p>
+<p>Bluetooth Disabled (`KocomojoBluetoothDisabledNotification`)</p>
 </div>
 
-* Button Enabled (`KocomojoButtonEnabledNotification`) and 
-* Full Screen View Closed (`KocomojoFullScreenViewClosedNotification`)
-* Experiences In Range (`KocomojoExperiencesInRangeNotification`) 
-* Bluetooth Disabled (`KocomojoBluetoothDisabledNotification`)
+<div class="swift">
+<p>Button Touched (`Notification.Name.KocomojoButtonTouched`)</p>
+<p>Button Enabled (`Notification.Name.KocomojoButtonEnabled`)</p>
+<p>Full Screen View Closed (`Notification.Name.KocomojoFullScreenViewClosed`)</p>
+<p>Experiences In Range (`Notification.Name..KocomojoExperiencesInRange`)</p>
+<p>Bluetooth Disabled (`Notification.Name.KocomojoBluetoothDisabled`)</p>
+</div>
 
 &nbsp;
 
@@ -217,15 +226,27 @@ Note that if you want to generate your own Push Notifications using the names of
 
 This simply tells when the button is touched, whether or not it is enabled.  
 
-```
-[[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(buttonTouched:) name:KocomojoButtonTouchedNotification object:nil];
+<div class="objc">
+<pre class="hljs"><code>[[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(buttonTouched:) name:KocomojoButtonTouchedNotification object:nil];
 
 ...
 
 - (void)buttonTouched:(NSNotification *)notification {
   NSLog(@"Button Touched!");
 }
-```
+</code></pre>
+</div>
+
+<div class="swift">
+<pre class="hljs"><code>NotificationCenter.default.addObserver(self, selector: #selector(self.buttonTouched), name: Notification.Name.KocomojoButtonTouched, object: nil);
+
+...
+
+func buttonTouched(notification: Notification) {
+    NSLog("Button Touched!");
+}
+</code></pre>
+</div>
 
 &nbsp;
 
@@ -233,8 +254,8 @@ This simply tells when the button is touched, whether or not it is enabled.
 
 This is called when the button is either enabled or disabled.  The `NSDictionary` in the `notification.object` contains `enabled`. 
 
-```
-[[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(buttonEnabled:) name:KocomojoButtonEnabledNotification object:nil];
+<div class="objc">
+<pre class="hljs"><code>[[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(buttonEnabled:) name:KocomojoButtonEnabledNotification object:nil];
 
 ...
 
@@ -247,7 +268,27 @@ This is called when the button is either enabled or disabled.  The `NSDictionary
     NSLog(@"Disabled!!");
   }
 }
-```
+</code></pre>
+</div>
+
+<div class="swift">
+<pre class="hljs"><code>NotificationCenter.default.addObserver(self, selector: #selector(self.buttonEnabled), name: Notification.Name.KocomojoButtonEnabled, object: nil);
+
+...
+
+func buttonEnabled(notification: Notification) {
+    let notificationDic = notification.object as! NSDictionary;
+    let enabledNum = notificationDic["enabled"] as! NSNumber;
+    
+    if(enabledNum.boolValue) {
+      NSLog("Enabled!");
+    } else {
+      NSLog("Disabled!");
+    }
+}
+</code></pre>
+</div>
+
 
 &nbsp;
 

@@ -187,26 +187,49 @@ KocomojoSDK.sharedInstance().pushTemplatePlural = &quot;<strong>NAMES</strong> a
 <p>Note that if you want to generate your own Push Notifications using the names of the experiences as they come into range, you can implement a listener for <code>KocomojoExperiencesInRangeNotification</code> (more information in the next section)</p>
 <p>&nbsp;</p>
 <h2 id="nsnotifications"><a class="header-link" href="#nsnotifications"></a>NSNotifications</h2>
-<div class="row">
-  <div class="col-xs-6">Button Touched</div><div class="col-xs-6">KocomojoButtonTouchedNotification</div>
+<p>&nbsp;</p>
+<div class="objc">
+<p>Button Touched (<code>KocomojoButtonTouchedNotification</code>)</p>
+<p>Button Enabled (<code>KocomojoButtonEnabledNotification</code>)</p>
+<p>Full Screen View Closed (<code>KocomojoFullScreenViewClosedNotification</code>)</p>
+<p>Experiences In Range (<code>KocomojoExperiencesInRangeNotification</code>)</p>
+<p>Bluetooth Disabled (<code>KocomojoBluetoothDisabledNotification</code>)</p>
 </div>
 
-<ul class="list">
-<li>Button Enabled (<code>KocomojoButtonEnabledNotification</code>) and </li>
-<li>Full Screen View Closed (<code>KocomojoFullScreenViewClosedNotification</code>)</li>
-<li>Experiences In Range (<code>KocomojoExperiencesInRangeNotification</code>) </li>
-<li>Bluetooth Disabled (<code>KocomojoBluetoothDisabledNotification</code>)</li>
-</ul>
+<div class="swift">
+<p>Button Touched (<code>Notification.Name.KocomojoButtonTouched</code>)</p>
+<p>Button Enabled (<code>Notification.Name.KocomojoButtonEnabled</code>)</p>
+<p>Full Screen View Closed (<code>Notification.Name.KocomojoFullScreenViewClosed</code>)</p>
+<p>Experiences In Range (<code>Notification.Name..KocomojoExperiencesInRange</code>)</p>
+<p>Bluetooth Disabled (<code>Notification.Name.KocomojoBluetoothDisabled</code>)</p>
+</div>
+
 <p>&nbsp;</p>
 <h3 id="button-touched"><a class="header-link" href="#button-touched"></a>Button Touched</h3>
 <p>This simply tells when the button is touched, whether or not it is enabled.  </p>
-<pre class="hljs"><code>[[<span class="hljs-name">NSNotificationCenter</span> defaultCenter]addObserver:self selector:@selector(<span class="hljs-name">buttonTouched:</span>) name:KocomojoButtonTouchedNotification object:nil]<span class="hljs-comment">;</span>
+<div class="objc">
+<pre class="hljs"><code>[[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(buttonTouched:) name:KocomojoButtonTouchedNotification object:nil];
 
 ...
 
-- (<span class="hljs-name">void</span>)buttonTouched:(<span class="hljs-name">NSNotification</span> *)notification {
-  NSLog(<span class="hljs-name">@</span><span class="hljs-string">"Button Touched!"</span>)<span class="hljs-comment">;</span>
-}</code></pre><p>&nbsp;</p>
+- (void)buttonTouched:(NSNotification *)notification {
+  NSLog(@&quot;Button Touched!&quot;);
+}
+</code></pre>
+</div>
+
+<div class="swift">
+<pre class="hljs"><code>NotificationCenter.default.addObserver(self, selector: #selector(self.buttonTouched), name: Notification.Name.KocomojoButtonTouched, object: nil);
+
+...
+
+func buttonTouched(notification: Notification) {
+    NSLog(&quot;Button Touched!&quot;);
+}
+</code></pre>
+</div>
+
+<p>&nbsp;</p>
 <h3 id="button-enabled"><a class="header-link" href="#button-enabled"></a>Button Enabled</h3>
 <p>This is called when the button is either enabled or disabled.  The <code>NSDictionary</code> in the <code>notification.object</code> contains <code>enabled</code>. </p>
 <pre class="hljs"><code>[[<span class="hljs-name">NSNotificationCenter</span> defaultCenter]addObserver:self selector:@selector(<span class="hljs-name">buttonEnabled:</span>) name:KocomojoButtonEnabledNotification object:nil]<span class="hljs-comment">;</span>

@@ -29,3 +29,7 @@ body {
 .active {
   background-color:#24c9ff !important;
 }
+
+a, a:hover {
+  color: #24c9ff !important;
+}
