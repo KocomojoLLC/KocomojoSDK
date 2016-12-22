@@ -296,15 +296,25 @@ func buttonEnabled(notification: Notification) {
 
 This is called when the full screen view is closed.
 
-```
-[[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(fullScreenViewClosed:) name:KocomojoFullScreenViewClosedNotification object:nil];
+<div class="objc">
+<pre class="hljs"><code>[[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(fullScreenViewClosed:) name:KocomojoFullScreenViewClosedNotification object:nil];
 
 ...
 
 - (void)fullScreenViewClosed:(NSNotification *)notification {
   NSLog(@"Full Screen View Closed");
-}
-```
+}</code></pre>
+</div>
+
+<div class="swift">
+<pre class="hljs"><code>NotificationCenter.default.addObserver(self, selector: #selector(self.fullScreenViewClosed), name: Notification.Name.KocomojoFullScreenViewClosed, object: nil);
+
+...
+
+func fullScreenViewClosed(notification: Notification) {
+  NSLog(@"Full Screen View Closed");
+}</code></pre>
+</div>
 
 &nbsp;
 
@@ -315,8 +325,8 @@ When experiences come in range (or go out of range) this will be posted.  The `n
 
 One thing to note is that this will only be posted with experiences who's `inRange` status changes.  Once an experiences comes `inRange`, the only other time it will appears in the `notification.data` array is when `inRange` becomes false.  
 
-```
-[[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(experiencesInRange:) name:KocomojoExperiencesInRangeNotification object:nil];
+<div class="objc">
+<pre class="hljs"><code>[[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(experiencesInRange:) name:KocomojoExperiencesInRangeNotification object:nil];
 
 ...
 
@@ -324,46 +334,20 @@ One thing to note is that this will only be posted with experiences who's `inRan
   NSArray *experiencesInRangeArray = notification.object;
   
   NSLog(@"Experiences In Range: %@", experiencesInRangeArray);
-}
-```
+}</code></pre>
+</div>
 
-Outputs:
+<div class="swift">
+<pre class="hljs"><code>NotificationCenter.default.addObserver(self, selector: #selector(self.experiencesInRange), name: Notification.Name.KocomojoExperiencesInRange, object: nil);
 
-```
-Experiences In Range: (
-    {
-        id = 155;
-        inRange = 0;
-        name = Quiznos;
-        boundaries =         (
-                        {
-                id = 6;
-                latitude = "35.898231";
-                longitude = "-78.51344";
-                maxLatitude = "35.97057645175178";
-                maxLongitude = "-78.4241312022986";
-                minLatitude = "35.82588554824822";
-                minLongitude = "-78.60274879770142";
-                radius = 5;
-                radiusMetric = "<null>";
-                type = geoshape;
-            }
-        );
-    },
-        {
-        id = 163;
-        inRange = 0;
-        name = "Park Plaza Cinema Promo";
-        boundaries = ...
-    },
-        {
-        id = 163;
-        inRange = 0;
-        name = "Park Plaza Cinema Promo";
-        boundaries = ...
-    }
-)
-```
+...
+
+func experiencesInRange(notification: Notification) {
+  let experiencesInRangeArray = notification.object as! NSArray;
+
+  NSLog("Experiences In Range: %@", experiencesInRangeArray);
+}</code></pre>
+</div>
 
 &nbsp;
 
@@ -371,12 +355,22 @@ Experiences In Range: (
 
 This is called if the user launches the app with Bluetooth disabled, or if they disable Bluetooth while in the app.
 
-```
-[[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(bluetoothDisabled:) KocomojoBluetoothDisabledNotification object:nil];
+<div class="objc">
+<pre class="hljs"><code>[[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(bluetoothDisabled:) KocomojoBluetoothDisabledNotification object:nil];
 
 ...
 
 - (void)bluetoothDisabled:(NSNotification *)notification {
   // Notify the user to turn Bluetooth on
-}
-```
+}</code></pre>
+</div>
+
+<div class="swift">
+<pre class="hljs"><code>NotificationCenter.default.addObserver(self, selector: #selector(self.bluetoothDisabled), name: Notification.Name.KocomojoBluetoothDisabled, object: nil);
+
+...
+
+func bluetoothDisabled(notification: Notification) {
+  // Notify the user to turn Bluetooth on
+}</code></pre>
+</div>

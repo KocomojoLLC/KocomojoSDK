@@ -232,82 +232,115 @@ func buttonTouched(notification: Notification) {
 <p>&nbsp;</p>
 <h3 id="button-enabled"><a class="header-link" href="#button-enabled"></a>Button Enabled</h3>
 <p>This is called when the button is either enabled or disabled.  The <code>NSDictionary</code> in the <code>notification.object</code> contains <code>enabled</code>. </p>
-<pre class="hljs"><code>[[<span class="hljs-name">NSNotificationCenter</span> defaultCenter]addObserver:self selector:@selector(<span class="hljs-name">buttonEnabled:</span>) name:KocomojoButtonEnabledNotification object:nil]<span class="hljs-comment">;</span>
+<div class="objc">
+<pre class="hljs"><code>[[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(buttonEnabled:) name:KocomojoButtonEnabledNotification object:nil];
 
 ...
 
-- (<span class="hljs-name">void</span>)buttonEnabled:(<span class="hljs-name">NSNotification</span> *)notification {
-  NSDictionary *notificationDic = notification.object<span class="hljs-comment">;</span>
+- (void)buttonEnabled:(NSNotification <em>)notification {
+  NSDictionary </em>notificationDic = notification.object;
 
-  if([<span class="hljs-name">notificationDic</span>[<span class="hljs-name">@</span><span class="hljs-string">"enabled"</span>]boolValue] == YES) {
-    NSLog(<span class="hljs-name">@</span><span class="hljs-string">"Enabled!!"</span>)<span class="hljs-comment">;</span>
+  if([notificationDic[@&quot;enabled&quot;]boolValue] == YES) {
+    NSLog(@&quot;Enabled!!&quot;);
   } else {
-    NSLog(<span class="hljs-name">@</span><span class="hljs-string">"Disabled!!"</span>)<span class="hljs-comment">;</span>
+    NSLog(@&quot;Disabled!!&quot;);
   }
-}</code></pre><p>&nbsp;</p>
+}
+</code></pre>
+</div>
+
+<div class="swift">
+<pre class="hljs"><code>NotificationCenter.default.addObserver(self, selector: #selector(self.buttonEnabled), name: Notification.Name.KocomojoButtonEnabled, object: nil);
+
+...
+
+func buttonEnabled(notification: Notification) {
+    let notificationDic = notification.object as! NSDictionary;
+    let enabledNum = notificationDic[&quot;enabled&quot;] as! NSNumber;
+
+    if(enabledNum.boolValue) {
+      NSLog(&quot;Enabled!&quot;);
+    } else {
+      NSLog(&quot;Disabled!&quot;);
+    }
+}
+</code></pre>
+</div>
+
+
+<p>&nbsp;</p>
 <h3 id="full-screen-view-closed"><a class="header-link" href="#full-screen-view-closed"></a>Full Screen View Closed</h3>
 <p>This is called when the full screen view is closed.</p>
-<pre class="hljs"><code>[[<span class="hljs-name">NSNotificationCenter</span> defaultCenter]addObserver:self selector:@selector(<span class="hljs-name">fullScreenViewClosed:</span>) name:KocomojoFullScreenViewClosedNotification object:nil]<span class="hljs-comment">;</span>
+<div class="objc">
+<pre class="hljs"><code>[[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(fullScreenViewClosed:) name:KocomojoFullScreenViewClosedNotification object:nil];
 
 ...
 
-- (<span class="hljs-name">void</span>)fullScreenViewClosed:(<span class="hljs-name">NSNotification</span> *)notification {
-  NSLog(<span class="hljs-name">@</span><span class="hljs-string">"Full Screen View Closed"</span>)<span class="hljs-comment">;</span>
-}</code></pre><p>&nbsp;</p>
+- (void)fullScreenViewClosed:(NSNotification *)notification {
+  NSLog(@&quot;Full Screen View Closed&quot;);
+}</code></pre>
+</div>
+
+<div class="swift">
+<pre class="hljs"><code>NotificationCenter.default.addObserver(self, selector: #selector(self.fullScreenViewClosed), name: Notification.Name.KocomojoFullScreenViewClosed, object: nil);
+
+...
+
+func fullScreenViewClosed(notification: Notification) {
+  NSLog(@&quot;Full Screen View Closed&quot;);
+}</code></pre>
+</div>
+
+<p>&nbsp;</p>
 <h3 id="experiences-in-range"><a class="header-link" href="#experiences-in-range"></a>Experiences In Range</h3>
 <p>When experiences come in range (or go out of range) this will be posted.  The <code>notification.data</code> will be an array containing <code>id</code>, <code>name</code>, and <code>inRange</code> (true or false) of each experience.  </p>
 <p>One thing to note is that this will only be posted with experiences who&#39;s <code>inRange</code> status changes.  Once an experiences comes <code>inRange</code>, the only other time it will appears in the <code>notification.data</code> array is when <code>inRange</code> becomes false.  </p>
-<pre class="hljs"><code>[[<span class="hljs-name">NSNotificationCenter</span> defaultCenter]addObserver:self selector:@selector(<span class="hljs-name">experiencesInRange:</span>) name:KocomojoExperiencesInRangeNotification object:nil]<span class="hljs-comment">;</span>
+<div class="objc">
+<pre class="hljs"><code>[[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(experiencesInRange:) name:KocomojoExperiencesInRangeNotification object:nil];
 
 ...
 
-- (<span class="hljs-name">void</span>)experiencesInRange:(<span class="hljs-name">NSNotification</span> *)notification {
-  NSArray *experiencesInRangeArray = notification.object<span class="hljs-comment">;</span>
+- (void)experiencesInRange:(NSNotification <em>)notification {
+  NSArray </em>experiencesInRangeArray = notification.object;
 
-  NSLog(<span class="hljs-name">@</span><span class="hljs-string">"Experiences In Range: %@"</span>, experiencesInRangeArray)<span class="hljs-comment">;</span>
-}</code></pre><p>Outputs:</p>
-<pre class="hljs"><code>Experiences In Range: (
-    {
-        id = <span class="hljs-number">155</span><span class="hljs-comment">;</span>
-        inRange = <span class="hljs-number">0</span><span class="hljs-comment">;</span>
-        name = Quiznos<span class="hljs-comment">;</span>
-        <span class="hljs-keyword">boundaries </span>=         (
-                        {
-                id = <span class="hljs-number">6</span><span class="hljs-comment">;</span>
-                latitude = <span class="hljs-string">"35.898231"</span><span class="hljs-comment">;</span>
-                longitude = <span class="hljs-string">"-78.51344"</span><span class="hljs-comment">;</span>
-                maxLatitude = <span class="hljs-string">"35.97057645175178"</span><span class="hljs-comment">;</span>
-                maxLongitude = <span class="hljs-string">"-78.4241312022986"</span><span class="hljs-comment">;</span>
-                minLatitude = <span class="hljs-string">"35.82588554824822"</span><span class="hljs-comment">;</span>
-                minLongitude = <span class="hljs-string">"-78.60274879770142"</span><span class="hljs-comment">;</span>
-                radius = <span class="hljs-number">5</span><span class="hljs-comment">;</span>
-                radiusMetric = <span class="hljs-string">"&lt;null&gt;"</span><span class="hljs-comment">;</span>
-                type = geoshape<span class="hljs-comment">;</span>
-            }
-        )<span class="hljs-comment">;</span>
-    },
-        {
-        id = <span class="hljs-number">163</span><span class="hljs-comment">;</span>
-        inRange = <span class="hljs-number">0</span><span class="hljs-comment">;</span>
-        name = <span class="hljs-string">"Park Plaza Cinema Promo"</span><span class="hljs-comment">;</span>
-        <span class="hljs-keyword">boundaries </span>= ...
-    },
-        {
-        id = <span class="hljs-number">163</span><span class="hljs-comment">;</span>
-        inRange = <span class="hljs-number">0</span><span class="hljs-comment">;</span>
-        name = <span class="hljs-string">"Park Plaza Cinema Promo"</span><span class="hljs-comment">;</span>
-        <span class="hljs-keyword">boundaries </span>= ...
-    }
-)</code></pre><p>&nbsp;</p>
+  NSLog(@&quot;Experiences In Range: %@&quot;, experiencesInRangeArray);
+}</code></pre>
+</div>
+
+<div class="swift">
+<pre class="hljs"><code>NotificationCenter.default.addObserver(self, selector: #selector(self.experiencesInRange), name: Notification.Name.KocomojoExperiencesInRange, object: nil);
+
+...
+
+func experiencesInRange(notification: Notification) {
+  let experiencesInRangeArray = notification.object as! NSArray;
+
+  NSLog(&quot;Experiences In Range: %@&quot;, experiencesInRangeArray);
+}</code></pre>
+</div>
+
+<p>&nbsp;</p>
 <h3 id="bluetooth-off"><a class="header-link" href="#bluetooth-off"></a>Bluetooth Off</h3>
 <p>This is called if the user launches the app with Bluetooth disabled, or if they disable Bluetooth while in the app.</p>
-<pre class="hljs"><code>[[NSNotificationCenter defaultCenter]<span class="hljs-string">addObserver:</span>self <span class="hljs-string">selector:</span><span class="hljs-meta">@selector</span>(<span class="hljs-string">bluetoothDisabled:</span>) KocomojoBluetoothDisabledNotification <span class="hljs-string">object:</span>nil];
+<div class="objc">
+<pre class="hljs"><code>[[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(bluetoothDisabled:) KocomojoBluetoothDisabledNotification object:nil];
 
 ...
 
-- (<span class="hljs-keyword">void</span>)<span class="hljs-string">bluetoothDisabled:</span>(NSNotification *)notification {
-  <span class="hljs-comment">// Notify the user to turn Bluetooth on</span>
-}</code></pre>      </div>
+- (void)bluetoothDisabled:(NSNotification *)notification {
+  // Notify the user to turn Bluetooth on
+}</code></pre>
+</div>
+
+<div class="swift">
+<pre class="hljs"><code>NotificationCenter.default.addObserver(self, selector: #selector(self.bluetoothDisabled), name: Notification.Name.KocomojoBluetoothDisabled, object: nil);
+
+...
+
+func bluetoothDisabled(notification: Notification) {
+  // Notify the user to turn Bluetooth on
+}</code></pre>
+</div>      </div>
     </div>
   </div>
 
