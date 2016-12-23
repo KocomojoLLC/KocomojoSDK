@@ -19,12 +19,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         let sharedInstance: KocomojoSDK = KocomojoSDK.sharedInstance();
-        sharedInstance.apiKey = "***REMOVED***";
+        sharedInstance.apiKey = "YOUR API KEY HERE";
         sharedInstance.radiusInMiles = 15.0;
         sharedInstance.showPushNotifications = true;
         sharedInstance.validateApiKey { (valid: Bool) in
             if !valid {
-                NSLog("API Key is not valid!");
+                NSLog("Email info@kocomojo.com to get your API key.");
             }
         }
         

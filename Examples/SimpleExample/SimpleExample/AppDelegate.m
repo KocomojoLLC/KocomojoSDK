@@ -19,13 +19,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     KocomojoSDK *sharedInstance = [KocomojoSDK sharedInstance];
     
-    [sharedInstance setApiKey:@"***REMOVED***"];
+    [sharedInstance setApiKey:@"YOUR API KEY HERE"];
     [sharedInstance setRadiusInMiles:[NSNumber numberWithFloat:15.0f]];  // set it to number of miles
     [sharedInstance setShowPushNotifications:YES];  // this is optional, more information below
     
     [sharedInstance validateApiKey:^(BOOL isValid) {
         if(isValid == NO) {
-            NSLog(@"API Key is not valid!");
+            NSLog(@"Email info@kocomojo.com to get your API key.");
         }
     }];
     return YES;
