@@ -63,7 +63,7 @@ pod kocomojo-sdk MyProject.xcodeproj
   <p>Add these lines in `application(_:didFinishLaunchingWithOptions:)`: </p>
 
   <pre class="hljs"><code>let sharedInstance: KocomojoSDK = KocomojoSDK.sharedInstance();
-sharedInstance.apiKey = "***REMOVED***";
+sharedInstance.apiKey = "YOUR_API_KEY_HERE";
 sharedInstance.radiusInMiles = 15.0; // set it to number of miles
 sharedInstance.showPushNotifications = true; // this is optional, more information below</code></pre>
 </div>
