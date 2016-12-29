@@ -2,7 +2,7 @@
 
 ## Installation
 
-KocomojoSDK is available through [CocoaPods](http://cocoapods.org). To install
+KocomojoSDK is available through [CocoaPods](https://cocoapods.org/pods/KocomojoSDK). To install
 it, simply add the following line to your Podfile:
 
 ```
