@@ -36,6 +36,7 @@ extern NSString * const KocomojoBluetoothDisabledNotification;
 
 + (instancetype)sharedInstance;
 - (void)validateApiKey:(ApiValidationBlock)validationBlock;
+- (void)didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings;
 - (void)didReceiveLocalNotification:(UILocalNotification *)notification;
 
 @end
