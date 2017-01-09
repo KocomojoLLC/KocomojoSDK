@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'KocomojoSDK'
-  s.version          = '0.9.715'
+  s.version          = '0.9.716'
   s.summary          = 'The Official KocomojoSDK.'
 
 # This description is used to generate tags and improve search results.
