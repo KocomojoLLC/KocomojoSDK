@@ -23,6 +23,7 @@
     <li class="sidebar-header-3"><a href="#run-kocomojo-sdk-gem">Run Kocomojo SDK Gem</a></li>
     <li class="sidebar-header-2"><a href="#implementation">Implementation</a></li>
     <li class="sidebar-header-3"><a href="#api-key-validation">API Key validation</a></li>
+    <li class="sidebar-header-3"><a href="#auto-show-experiences">Auto Show Experiences</a></li>
     <li class="sidebar-header-2"><a href="#adding-the-button">Adding the Button</a></li>
     <li class="sidebar-header-2"><a href="#info-plist">Info.plist</a></li>
     <li class="sidebar-header-2"><a href="#local-push-notifications">Local Push Notifications</a></li>
@@ -87,11 +88,24 @@ sharedInstance.showPushNotifications = true; // this is optional, more informati
 </div>
 
 <div class="swift">
-<pre class="hljs"><code>sharedInstance.validateApiKey { (valid: Bool) in ...</code></pre>
+<pre class="hljs"><code>KocomojoSDK.sharedInstance().validateApiKey { (valid: Bool) in ...</code></pre>
 </div>
 
 <p>Alternatively you can also look for an error message in logs.</p>
 <p>&nbsp;</p>
+<h3 id="auto-show-experiences"><a class="header-link" href="#auto-show-experiences"></a>Auto Show Experiences</h3>
+<p>You can have experiences automatically pop up once the user is within range. </p>
+<p>To do this: </p>
+<div class="objc">
+<pre class="hljs"><code>[[KocomojoSDK sharedInstance]setAutomaticallyShowExperiences:YES];</code></pre>
+</div>
+
+<div class="swift">
+<pre class="hljs"><code>KocomojoSDK.sharedInstance().automaticallyShowExperiences = true;</code></pre>
+</div>
+
+
+
 <h2 id="adding-the-button"><a class="header-link" href="#adding-the-button"></a>Adding the Button</h2>
 <div class="objc">
 <p>In the View Controller where you&#39;d like to put the button import KocomojoButton.h:</p>

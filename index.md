@@ -79,12 +79,28 @@ You can validate your api key directly by calling
 </div>
 
 <div class="swift">
-<pre class="hljs"><code>sharedInstance.validateApiKey { (valid: Bool) in ...</code></pre>
+<pre class="hljs"><code>KocomojoSDK.sharedInstance().validateApiKey { (valid: Bool) in ...</code></pre>
 </div>
 
 Alternatively you can also look for an error message in logs.
 
 &nbsp;
+
+### Auto Show Experiences 
+
+You can have experiences automatically pop up once the user is within range. 
+
+To do this: 
+
+<div class="objc">
+<pre class="hljs"><code>[[KocomojoSDK sharedInstance]setAutomaticallyShowExperiences:YES];</code></pre>
+</div>
+
+<div class="swift">
+<pre class="hljs"><code>KocomojoSDK.sharedInstance().automaticallyShowExperiences = true;</code></pre>
+</div>
+
+
 
 ## Adding the Button
 
