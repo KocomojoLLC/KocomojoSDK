@@ -31,6 +31,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    func application(_ application: UIApplication, didRegister notificationSettings: UIUserNotificationSettings) {
+        KocomojoSDK.sharedInstance().didRegister(notificationSettings);
+    }
+    
     func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
         KocomojoSDK.sharedInstance().didReceive(notification);
     }
