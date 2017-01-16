@@ -389,7 +389,7 @@ func experiencesInRange(notification: Notification) {
 This is called if the user launches the app with Bluetooth disabled, or if they disable Bluetooth while in the app.
 
 <div class="objc">
-<pre class="hljs"><code>[[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(bluetoothDisabled:) KocomojoBluetoothDisabledNotification object:nil];
+<pre class="hljs"><code>[[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(bluetoothDisabled:) name:KocomojoBluetoothDisabledNotification object:nil];
 
 ...
 
