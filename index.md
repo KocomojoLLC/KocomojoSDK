@@ -14,7 +14,7 @@ KocomojoSDK is available through [CocoaPods](https://cocoapods.org/pods/Kocomojo
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'KocomojoSDK'
+pod 'KocomojoSDK', '~> 0.9.0'
 ```
 
 <div class="swift">
