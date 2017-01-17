@@ -6,7 +6,7 @@ KocomojoSDK is available through [CocoaPods](https://cocoapods.org/pods/Kocomojo
 it, simply add the following line to your Podfile:
 
 ```
-pod 'KocomojoSDK'
+pod 'KocomojoSDK', '~> 0.9.0'
 ```
 
 ## Cocoapod Kocomojo SDK Gem
