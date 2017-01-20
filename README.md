@@ -1,7 +1,5 @@
 # KocomojoSDK
 
-## Installation
-
 ## Carthage
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) as a prebuilt framework. 
 
@@ -17,7 +15,7 @@ KocomojoSDK is also available through [CocoaPods](https://cocoapods.org/pods/Koc
 it, simply add the following line to your Podfile:
 
 ```
-pod 'KocomojoSDK', '~> 0.9.0'd
+pod 'KocomojoSDK', '> 0.9.0'
 ```
 
 ### Cocoapod Kocomojo SDK Gem
