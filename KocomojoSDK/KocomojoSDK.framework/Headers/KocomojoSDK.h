@@ -15,6 +15,9 @@ typedef void(^ApiValidationBlock)(BOOL isValid);
 
 NS_ASSUME_NONNULL_BEGIN
 
+FOUNDATION_EXPORT double KocomojoSDKVersionNumber;
+FOUNDATION_EXPORT const unsigned char KocomojoSDKVersionString[];
+
 extern NSString * const KocomojoButtonTouchedNotification;
 extern NSString * const KocomojoButtonEnabledNotification;
 extern NSString * const KocomojoFullScreenViewClosedNotification;
