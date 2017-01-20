@@ -10,11 +10,21 @@
 
 ## Installation
 
+&nbsp;
+
+### Carthage 
+KocomojoSDK is Carthage compatible as a prebuilt framework.  To install it, simply add the following line to your Cartfile: 
+
+```
+github "KocomojoLLC/KocomojoSDK"
+```
+
+### Cocoapods 
 KocomojoSDK is available through [CocoaPods](https://cocoapods.org/pods/KocomojoSDK). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'KocomojoSDK', '~> 0.9.0'
+pod 'KocomojoSDK', '> 0.9.0'
 ```
 
 <div class="swift">
@@ -26,7 +36,7 @@ pod 'KocomojoSDK', '~> 0.9.0'
 &nbsp;
 
 
-### Run Kocomojo SDK Gem
+#### Cocoapod Gem
 
 After running `pod install` there's one more step -- using the `cocoapod-kocomojo-gem` to add a build phase to your project.  To install:
 

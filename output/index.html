@@ -20,7 +20,9 @@
           <p>&nbsp;</p><ul class="nav nav-list" style="height:100%;overflow-y:scroll;">
     <li class="sidebar-header-1"><a href="#kocomojosdk-for-ios">KocomojoSDK for iOS</a></li>
     <li class="sidebar-header-2"><a href="#installation">Installation</a></li>
-    <li class="sidebar-header-3"><a href="#run-kocomojo-sdk-gem">Run Kocomojo SDK Gem</a></li>
+    <li class="sidebar-header-3"><a href="#carthage">Carthage</a></li>
+    <li class="sidebar-header-3"><a href="#cocoapods">Cocoapods</a></li>
+    <li class="sidebar-header-4"><a href="#cocoapod-gem">Cocoapod Gem</a></li>
     <li class="sidebar-header-2"><a href="#implementation">Implementation</a></li>
     <li class="sidebar-header-3"><a href="#api-key-validation">API Key validation</a></li>
     <li class="sidebar-header-3"><a href="#auto-show-experiences">Auto Show Experiences</a></li>
@@ -47,16 +49,20 @@
 </div>
 
 <h2 id="installation"><a class="header-link" href="#installation"></a>Installation</h2>
+<p>&nbsp;</p>
+<h3 id="carthage"><a class="header-link" href="#carthage"></a>Carthage</h3>
+<p>KocomojoSDK is Carthage compatible as a prebuilt framework.  To install it, simply add the following line to your Cartfile: </p>
+<pre class="hljs"><code><span class="hljs-attribute">github</span> <span class="hljs-string">"KocomojoLLC/KocomojoSDK"</span></code></pre><h3 id="cocoapods"><a class="header-link" href="#cocoapods"></a>Cocoapods</h3>
 <p>KocomojoSDK is available through <a href="https://cocoapods.org/pods/KocomojoSDK">CocoaPods</a>. To install
 it, simply add the following line to your Podfile:</p>
-<pre class="hljs"><code>pod <span class="hljs-string">'KocomojoSDK'</span>, <span class="hljs-string">'~&gt; 0.9.0'</span></code></pre><div class="swift">
+<pre class="hljs"><code>pod <span class="hljs-string">'KocomojoSDK'</span>, <span class="hljs-string">'&gt; 0.9.0'</span></code></pre><div class="swift">
 <p>Make sure to uncomment this line:</p>
 
 <pre class="hljs"><code>use_frameworks!</code></pre>
 </div>
 
 <p>&nbsp;</p>
-<h3 id="run-kocomojo-sdk-gem"><a class="header-link" href="#run-kocomojo-sdk-gem"></a>Run Kocomojo SDK Gem</h3>
+<h4 id="cocoapod-gem"><a class="header-link" href="#cocoapod-gem"></a>Cocoapod Gem</h4>
 <p>After running <code>pod install</code> there&#39;s one more step -- using the <code>cocoapod-kocomojo-gem</code> to add a build phase to your project.  To install:</p>
 <pre class="hljs"><code>gem install cocoapods-kocomojo-sdk</code></pre><p>then run: </p>
 <pre class="hljs"><code>pod kocomojo-sdk</code></pre><p>If there&#39;s more than one <code>.xcodeproj</code> in your directory you&#39;ll need to specify it like: </p>
