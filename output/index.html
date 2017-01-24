@@ -29,6 +29,7 @@
     <li class="sidebar-header-2"><a href="#adding-the-button">Adding the Button</a></li>
     <li class="sidebar-header-2"><a href="#info-plist">Info.plist</a></li>
     <li class="sidebar-header-2"><a href="#local-push-notifications">Local Push Notifications</a></li>
+    <li class="sidebar-header-3"><a href="#frequency">Frequency</a></li>
     <li class="sidebar-header-3"><a href="#push-templates">Push Templates</a></li>
     <li class="sidebar-header-3"><a href="#open-app-from-push">Open app from Push</a></li>
     <li class="sidebar-header-2"><a href="#notifications">Notifications</a></li>
@@ -186,6 +187,17 @@ self.view.addSubview(button);
 }</code></pre>
 </div>
 
+
+<p>&nbsp;</p>
+<h3 id="frequency"><a class="header-link" href="#frequency"></a>Frequency</h3>
+<p>You change the frequency of push notifications - how many seconds will need to pass after a push notification for another one to occur.  (Any notifications that would occur during this time is ignored as to not overwhelm the client.)  This defaults to 60 &#42; 60 &#42; 2 = 3600, or 2 hours.</p>
+<div class="objc">
+<pre class="hljs"><code>[[KocomojoSDK sharedInstance]setMinimumSecondsBetweenPushNotifications:[NSNumber numberWithInteger: 3600]];</code></pre>
+</div>
+
+<div class="swift">
+<pre class="hljs"><code>KocomojoSDK.sharedInstance().minimumSecondsBetweenPushNotifications = 3600</code></pre>
+</div>
 
 <p>&nbsp;</p>
 <h3 id="push-templates"><a class="header-link" href="#push-templates"></a>Push Templates</h3>
