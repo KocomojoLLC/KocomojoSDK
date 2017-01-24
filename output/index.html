@@ -53,7 +53,12 @@
 <p>&nbsp;</p>
 <h3 id="carthage"><a class="header-link" href="#carthage"></a>Carthage</h3>
 <p>KocomojoSDK is Carthage compatible as a prebuilt framework.  To install it, simply add the following line to your Cartfile: </p>
-<pre class="hljs"><code><span class="hljs-attribute">github</span> <span class="hljs-string">"KocomojoLLC/KocomojoSDK"</span></code></pre><h3 id="cocoapods"><a class="header-link" href="#cocoapods"></a>Cocoapods</h3>
+<pre class="hljs"><code><span class="hljs-attribute">github</span> <span class="hljs-string">"KocomojoLLC/KocomojoSDK"</span></code></pre><div class="swift">
+<p>Add this line to your <code>-Bridging-Header.h</code>:</p>
+<pre class="hljs"><code>#import &lt;KocomojoSDK/KocomojoSDK.h&gt;</code></pre>
+</div>
+
+<h3 id="cocoapods"><a class="header-link" href="#cocoapods"></a>Cocoapods</h3>
 <p>KocomojoSDK is available through <a href="https://cocoapods.org/pods/KocomojoSDK">CocoaPods</a>. To install
 it, simply add the following line to your Podfile:</p>
 <pre class="hljs"><code>pod <span class="hljs-string">'KocomojoSDK'</span>, <span class="hljs-string">'&gt; 0.9.0'</span></code></pre><div class="swift">

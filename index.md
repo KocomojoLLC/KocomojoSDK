@@ -19,6 +19,11 @@ KocomojoSDK is Carthage compatible as a prebuilt framework.  To install it, simp
 github "KocomojoLLC/KocomojoSDK"
 ```
 
+<div class="swift">
+<p>Add this line to your `-Bridging-Header.h`:</p>
+<pre class="hljs"><code>#import &lt;KocomojoSDK/KocomojoSDK.h&gt;</code></pre>
+</div>
+
 ### Cocoapods 
 KocomojoSDK is available through [CocoaPods](https://cocoapods.org/pods/KocomojoSDK). To install
 it, simply add the following line to your Podfile:
