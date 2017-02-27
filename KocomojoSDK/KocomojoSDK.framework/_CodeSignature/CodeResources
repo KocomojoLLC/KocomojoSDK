@@ -6,15 +6,23 @@
 	<dict>
 		<key>Headers/KocomojoButton.h</key>
 		<data>
-		Lq8Fh3Nspndc4wl9QaP777FealE=
+		oGaIOvxoGFfLQcGWbtJD77LXRDk=
+		</data>
+		<key>Headers/KocomojoExperience.h</key>
+		<data>
+		a/bwUJFzWb3Pj1/F70ssE0AYdNE=
 		</data>
 		<key>Headers/KocomojoSDK.h</key>
 		<data>
 		9me0vyqVGXURqgwk/AiXebGqMwQ=
 		</data>
+		<key>Headers/KocomojoView.h</key>
+		<data>
+		BUYON6lGI3Q93Cu0JraWJbkpV0w=
+		</data>
 		<key>Info.plist</key>
 		<data>
-		EMX45TbTPdioICraDHKPxAf63mg=
+		tk9GA9Ere0C7iQMemZzAy/U8Z1U=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -186,11 +194,11 @@
 		</data>
 		<key>main.jsbundle</key>
 		<data>
-		nvehM6thqmRqT94k9neHBSTqpQs=
+		0dAm6ih9sM5FmQrEoylGskTvV3U=
 		</data>
 		<key>main.jsbundle.meta</key>
 		<data>
-		VMszWgCaIgU2MO7ORYm6tm5c1eU=
+		2dHHiqv+VAuxD9SKkfr+9+sx8Og=
 		</data>
 		<key>strip-frameworks.sh</key>
 		<data>
@@ -203,11 +211,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Lq8Fh3Nspndc4wl9QaP777FealE=
+			oGaIOvxoGFfLQcGWbtJD77LXRDk=
 			</data>
 			<key>hash2</key>
 			<data>
-			PbGzuG0eRddyicR1qBO7tBCJHtdkRzygvlU/pRQzzNw=
+			M6zkZvpsIo2zRquwqA1qY1i9mGIXpaZTGW9gvy3s1fA=
+			</data>
+		</dict>
+		<key>Headers/KocomojoExperience.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			a/bwUJFzWb3Pj1/F70ssE0AYdNE=
+			</data>
+			<key>hash2</key>
+			<data>
+			b705/I/N0Hu+jiFibeVaR4MC69F4rlPGHoYBPqSNyo4=
 			</data>
 		</dict>
 		<key>Headers/KocomojoSDK.h</key>
@@ -219,6 +238,17 @@
 			<key>hash2</key>
 			<data>
 			T1OU0XGry/z0qVSHRaqnKbPtD3CC5oBuPXzqj9SMBsk=
+			</data>
+		</dict>
+		<key>Headers/KocomojoView.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			BUYON6lGI3Q93Cu0JraWJbkpV0w=
+			</data>
+			<key>hash2</key>
+			<data>
+			3ops2QVup3VWCWQpsKLVZDqEIy2f83xM6QxWtaI4gNw=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -687,22 +717,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			nvehM6thqmRqT94k9neHBSTqpQs=
+			0dAm6ih9sM5FmQrEoylGskTvV3U=
 			</data>
 			<key>hash2</key>
 			<data>
-			O7pADGrROMtThv7TDCSkiKVdsf4tTNv2c0uR4mFhXvY=
+			+8JEQzlVu/Yed1tHlE1ha94nern2MW1pQC8bd+rpMTo=
 			</data>
 		</dict>
 		<key>main.jsbundle.meta</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			VMszWgCaIgU2MO7ORYm6tm5c1eU=
+			2dHHiqv+VAuxD9SKkfr+9+sx8Og=
 			</data>
 			<key>hash2</key>
 			<data>
-			v31f5t7E4jp5pNXF1nkFo7BVTFoObGeeCmI7OHG1uBc=
+			CJEbyv8BN4mOB0IO3a7JwHl/jaDjSDl2JP+r1Cd8jK4=
 			</data>
 		</dict>
 		<key>strip-frameworks.sh</key>

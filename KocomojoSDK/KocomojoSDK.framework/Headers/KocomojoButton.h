@@ -8,8 +8,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KocomojoView.h"
 
-@interface KocomojoButton : UIView
+@interface KocomojoButton : KocomojoView
 
 @property (strong, nonatomic, nonnull) NSString *enabledImageName;
 @property (strong, nonatomic, nonnull) NSString *disabledImageName;
