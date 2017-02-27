@@ -14,7 +14,7 @@
 		</data>
 		<key>Headers/KocomojoSDK.h</key>
 		<data>
-		9me0vyqVGXURqgwk/AiXebGqMwQ=
+		MuzPc6ixjdqIIS0X1UWZp5Ki5Xk=
 		</data>
 		<key>Headers/KocomojoView.h</key>
 		<data>
@@ -194,11 +194,11 @@
 		</data>
 		<key>main.jsbundle</key>
 		<data>
-		0dAm6ih9sM5FmQrEoylGskTvV3U=
+		d4/l1juF6V4abFuDT2zWV+f4ymU=
 		</data>
 		<key>main.jsbundle.meta</key>
 		<data>
-		2dHHiqv+VAuxD9SKkfr+9+sx8Og=
+		Phwvsigb4lwPKiS2lxVZWKaFG1s=
 		</data>
 		<key>strip-frameworks.sh</key>
 		<data>
@@ -233,11 +233,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			9me0vyqVGXURqgwk/AiXebGqMwQ=
+			MuzPc6ixjdqIIS0X1UWZp5Ki5Xk=
 			</data>
 			<key>hash2</key>
 			<data>
-			T1OU0XGry/z0qVSHRaqnKbPtD3CC5oBuPXzqj9SMBsk=
+			76L0ymOc0qpqmb2GkqTnhuN2KVqm+va2wky42zfEoQM=
 			</data>
 		</dict>
 		<key>Headers/KocomojoView.h</key>
@@ -717,22 +717,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			0dAm6ih9sM5FmQrEoylGskTvV3U=
+			d4/l1juF6V4abFuDT2zWV+f4ymU=
 			</data>
 			<key>hash2</key>
 			<data>
-			+8JEQzlVu/Yed1tHlE1ha94nern2MW1pQC8bd+rpMTo=
+			kcXMPDccGg2VbsW/WIN+unXVGPOGOM6PdJVRJa4Lf+8=
 			</data>
 		</dict>
 		<key>main.jsbundle.meta</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			2dHHiqv+VAuxD9SKkfr+9+sx8Og=
+			Phwvsigb4lwPKiS2lxVZWKaFG1s=
 			</data>
 			<key>hash2</key>
 			<data>
-			CJEbyv8BN4mOB0IO3a7JwHl/jaDjSDl2JP+r1Cd8jK4=
+			V/PEcmQdYmaKTEJbQeFP6sj0OmE6hgzjSaq0dDtSVfM=
 			</data>
 		</dict>
 		<key>strip-frameworks.sh</key>

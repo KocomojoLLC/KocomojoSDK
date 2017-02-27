@@ -10,6 +10,7 @@
 
 #import <UIKit/UIKit.h>
 #import <KocomojoSDK/KocomojoButton.h>
+#import <KocomojoSDK/KocomojoExperience.h>
 
 typedef void(^ApiValidationBlock)(BOOL isValid);
 
@@ -23,6 +24,7 @@ extern NSString * const KocomojoButtonEnabledNotification;
 extern NSString * const KocomojoFullScreenViewClosedNotification;
 extern NSString * const KocomojoExperiencesInRangeNotification;
 extern NSString * const KocomojoBluetoothDisabledNotification;
+extern NSString * const KocomojoMainExperienceReadyNotification;
 
 @interface KocomojoSDK : NSObject
 
