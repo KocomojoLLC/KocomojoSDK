@@ -108,23 +108,23 @@ Alternatively you can also look for an error message in logs.
 
 &nbsp;
 
-### Auto Show Experiences 
+# Experience Or Button
 
-You can have experiences automatically pop up once the user is within range. 
+&nbsp;
 
-To do this: 
+The user can enter KocomojoSDK's interface either via an Experience or a Button.  Only one of the two can exist per app. 
 
-<div class="objc">
-<pre class="hljs"><code>[[KocomojoSDK sharedInstance]setAutomaticallyShowExperiences:YES];</code></pre>
-</div>
+If the entire app is based on KocmomojoSDK (i.e. the first thing the user would see would be a screen designed in the editor), then you'd want to use `KocomojoExperience`.  
 
-<div class="swift">
-<pre class="hljs"><code>KocomojoSDK.sharedInstance().automaticallyShowExperiences = true;</code></pre>
-</div>
+If the app has functionality outside of KocomojoSDK, then your app will use `KocomojoButton` as it's entry point.
 
+&nbsp;
 
+## Using KocomojoExperience
 
-## Adding the Button
+&nbsp;
+
+## Using KocomojoButton
 
 <div class="objc">
 <p>In the View Controller where you'd like to put the button import KocomojoButton.h:</p>
@@ -158,6 +158,22 @@ self.view.addSubview(button);
 
 You can also implement this in Storyboard, just create a View inside the ViewController and change it's Class to `KocomojoButton`.  
 This can then be connected to an `IBOutlet` and enabled / disabled images can be assigned like above.  
+
+&nbsp;
+
+### Auto Show Experiences 
+
+You can have experiences automatically pop up once the user is within range. 
+
+To do this: 
+
+<div class="objc">
+<pre class="hljs"><code>[[KocomojoSDK sharedInstance]setAutomaticallyShowExperiences:YES];</code></pre>
+</div>
+
+<div class="swift">
+<pre class="hljs"><code>KocomojoSDK.sharedInstance().automaticallyShowExperiences = true;</code></pre>
+</div>
 
 &nbsp;
 

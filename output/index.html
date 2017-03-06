@@ -25,8 +25,10 @@
     <li class="sidebar-header-4"><a href="#cocoapod-gem">Cocoapod Gem</a></li>
     <li class="sidebar-header-2"><a href="#implementation">Implementation</a></li>
     <li class="sidebar-header-3"><a href="#api-key-validation">API Key validation</a></li>
+    <li class="sidebar-header-1"><a href="#experience-or-button">Experience Or Button</a></li>
+    <li class="sidebar-header-2"><a href="#using-kocomojoexperience">Using KocomojoExperience</a></li>
+    <li class="sidebar-header-2"><a href="#using-kocomojobutton">Using KocomojoButton</a></li>
     <li class="sidebar-header-3"><a href="#auto-show-experiences">Auto Show Experiences</a></li>
-    <li class="sidebar-header-2"><a href="#adding-the-button">Adding the Button</a></li>
     <li class="sidebar-header-2"><a href="#info-plist">Info.plist</a></li>
     <li class="sidebar-header-2"><a href="#local-push-notifications">Local Push Notifications</a></li>
     <li class="sidebar-header-3"><a href="#frequency">Frequency</a></li>
@@ -112,20 +114,15 @@ sharedInstance.showPushNotifications = true; // this is optional, more informati
 
 <p>Alternatively you can also look for an error message in logs.</p>
 <p>&nbsp;</p>
-<h3 id="auto-show-experiences"><a class="header-link" href="#auto-show-experiences"></a>Auto Show Experiences</h3>
-<p>You can have experiences automatically pop up once the user is within range. </p>
-<p>To do this: </p>
-<div class="objc">
-<pre class="hljs"><code>[[KocomojoSDK sharedInstance]setAutomaticallyShowExperiences:YES];</code></pre>
-</div>
-
-<div class="swift">
-<pre class="hljs"><code>KocomojoSDK.sharedInstance().automaticallyShowExperiences = true;</code></pre>
-</div>
-
-
-
-<h2 id="adding-the-button"><a class="header-link" href="#adding-the-button"></a>Adding the Button</h2>
+<h1 id="experience-or-button"><a class="header-link" href="#experience-or-button"></a>Experience Or Button</h1>
+<p>&nbsp;</p>
+<p>The user can enter KocomojoSDK&#39;s interface either via an Experience or a Button.  Only one of the two can exist per app. </p>
+<p>If the entire app is based on KocmomojoSDK (i.e. the first thing the user would see would be a screen designed in the editor), then you&#39;d want to use <code>KocomojoExperience</code>.  </p>
+<p>If the app has functionality outside of KocomojoSDK, then your app will use <code>KocomojoButton</code> as it&#39;s entry point.</p>
+<p>&nbsp;</p>
+<h2 id="using-kocomojoexperience"><a class="header-link" href="#using-kocomojoexperience"></a>Using KocomojoExperience</h2>
+<p>&nbsp;</p>
+<h2 id="using-kocomojobutton"><a class="header-link" href="#using-kocomojobutton"></a>Using KocomojoButton</h2>
 <div class="objc">
 <p>In the View Controller where you&#39;d like to put the button import KocomojoButton.h:</p>
 
@@ -157,6 +154,18 @@ self.view.addSubview(button);
 </div>
 
 <p>You can also implement this in Storyboard, just create a View inside the ViewController and change it&#39;s Class to <code>KocomojoButton</code>.<br>This can then be connected to an <code>IBOutlet</code> and enabled / disabled images can be assigned like above.  </p>
+<p>&nbsp;</p>
+<h3 id="auto-show-experiences"><a class="header-link" href="#auto-show-experiences"></a>Auto Show Experiences</h3>
+<p>You can have experiences automatically pop up once the user is within range. </p>
+<p>To do this: </p>
+<div class="objc">
+<pre class="hljs"><code>[[KocomojoSDK sharedInstance]setAutomaticallyShowExperiences:YES];</code></pre>
+</div>
+
+<div class="swift">
+<pre class="hljs"><code>KocomojoSDK.sharedInstance().automaticallyShowExperiences = true;</code></pre>
+</div>
+
 <p>&nbsp;</p>
 <h2 id="info-plist"><a class="header-link" href="#info-plist"></a>Info.plist</h2>
 <p>These are the key/value pairs you&#39;ll need to add to your Info.plist: </p>
