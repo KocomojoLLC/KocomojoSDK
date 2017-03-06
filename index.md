@@ -122,6 +122,22 @@ If the app has functionality outside of KocomojoSDK, then your app will use `Koc
 
 ## Using KocomojoExperience
 
+<div class="objc">
+<p>In the app's root View Controller, import KocomojoExperience.h:</p>
+<p>`#import <KocomojoSDK/KocomojoSDK.h>`</p>
+<p>Inside of `viewDidLoad`:</p>
+<pre class="hljs"><code>KocomojoExperience *experienceView = [[KocomojoExperience alloc]initWithFrame:self.view.frame];
+[self.view addSubview:experienceView];</code></pre>
+</div>
+
+<div class="swift">
+<p>In the app's root View Controller, import KocomojoSDK.KocomojoExperience:</p>
+<p>`import KocomojoSDK.KocomojoExperience`</p>
+<p>Inside of `viewDidLoad()`:</p>
+<pre class="hljs"><code>let experienceView = KocomojoExperience(frame:self.view.frame);
+self.view.addSubview(experienceView);</code></pre>
+</div>
+
 &nbsp;
 
 ## Using KocomojoButton
@@ -142,7 +158,7 @@ button.center = self.view.center;
 </div>
 
 <div class="swift">
-<p>In the View Controller where you'd like to put the button import import KocomojoSDK.KocomojoButton:</p>
+<p>In the View Controller where you'd like to put the button import KocomojoSDK.KocomojoButton:</p>
 
 <p>`import KocomojoSDK.KocomojoButton`</p>
 

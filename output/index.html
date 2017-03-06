@@ -121,6 +121,22 @@ sharedInstance.showPushNotifications = true; // this is optional, more informati
 <p>If the app has functionality outside of KocomojoSDK, then your app will use <code>KocomojoButton</code> as it&#39;s entry point.</p>
 <p>&nbsp;</p>
 <h2 id="using-kocomojoexperience"><a class="header-link" href="#using-kocomojoexperience"></a>Using KocomojoExperience</h2>
+<div class="objc">
+<p>In the app&#39;s root View Controller, import KocomojoExperience.h:</p>
+<p><code>#import &lt;KocomojoSDK/KocomojoSDK.h&gt;</code></p>
+<p>Inside of <code>viewDidLoad</code>:</p>
+<pre class="hljs"><code>KocomojoExperience *experienceView = [[KocomojoExperience alloc]initWithFrame:self.view.frame];
+[self.view addSubview:experienceView];</code></pre>
+</div>
+
+<div class="swift">
+<p>In the app&#39;s root View Controller, import KocomojoSDK.KocomojoExperience:</p>
+<p><code>import KocomojoSDK.KocomojoExperience</code></p>
+<p>Inside of <code>viewDidLoad()</code>:</p>
+<pre class="hljs"><code>let experienceView = KocomojoExperience(frame:self.view.frame);
+self.view.addSubview(experienceView);</code></pre>
+</div>
+
 <p>&nbsp;</p>
 <h2 id="using-kocomojobutton"><a class="header-link" href="#using-kocomojobutton"></a>Using KocomojoButton</h2>
 <div class="objc">
@@ -139,7 +155,7 @@ button.center = self.view.center;
 </div>
 
 <div class="swift">
-<p>In the View Controller where you&#39;d like to put the button import import KocomojoSDK.KocomojoButton:</p>
+<p>In the View Controller where you&#39;d like to put the button import KocomojoSDK.KocomojoButton:</p>
 
 <p><code>import KocomojoSDK.KocomojoButton</code></p>
 
