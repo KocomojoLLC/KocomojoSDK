@@ -13,7 +13,7 @@
     <div class="row-fluid">
       <div class="col-xs-3">
         <div style="position:fixed;height:calc(100% - 120px)">
-          <div class="btn-group btn-toggle" style="margin-left:15px;"> 
+          <div class="btn-group btn-toggle" id="lang-toggle" style="margin-left:15px;"> 
             <button class="btn btn-lg btn-default active">Objective-C</button>
             <button class="btn btn-lg btn-default">Swift</button>
           </div>
@@ -28,7 +28,7 @@
     <li class="sidebar-header-1"><a href="#experience-or-button">Experience Or Button</a></li>
     <li class="sidebar-header-2"><a href="#using-kocomojoexperience">Using KocomojoExperience</a></li>
     <li class="sidebar-header-2"><a href="#using-kocomojobutton">Using KocomojoButton</a></li>
-    <li class="sidebar-header-3"><a href="#auto-show-experiences">Auto Show Experiences</a></li>
+    <li class="sidebar-header-3"><a href="#auto-show-experiences-kocomojo-button-only-">Auto Show Experiences (Kocomojo Button only)</a></li>
     <li class="sidebar-header-2"><a href="#info-plist">Info.plist</a></li>
     <li class="sidebar-header-2"><a href="#local-push-notifications">Local Push Notifications</a></li>
     <li class="sidebar-header-3"><a href="#frequency">Frequency</a></li>
@@ -118,7 +118,15 @@ sharedInstance.showPushNotifications = true; // this is optional, more informati
 <p>&nbsp;</p>
 <p>The user can enter KocomojoSDK&#39;s interface either via an Experience or a Button.  Only one of the two can exist per app. </p>
 <p>If the entire app is based on KocmomojoSDK (i.e. the first thing the user would see would be a screen designed in the editor), then you&#39;d want to use <code>KocomojoExperience</code>.  </p>
-<p>If the app has functionality outside of KocomojoSDK, then your app will use <code>KocomojoButton</code> as it&#39;s entry point.</p>
+<p>If the app has existing functionality outside of KocomojoSDK, then your app will use <code>KocomojoButton</code> as it&#39;s entry point.</p>
+<p>&nbsp;</p>
+<p style="font-size:2em;">Which implementation do you plan to use in your app?</p>
+
+<div class="btn-group btn-toggle" id="implementation-toggle" style="left:50%;margin-left:-25%;"> 
+  <button class="btn btn-lg btn-default">Experience</button>
+  <button class="btn btn-lg btn-default">Button</button>
+</div>
+
 <p>&nbsp;</p>
 <h2 id="using-kocomojoexperience"><a class="header-link" href="#using-kocomojoexperience"></a>Using KocomojoExperience</h2>
 <div class="objc">
@@ -171,7 +179,7 @@ self.view.addSubview(button);
 
 <p>You can also implement this in Storyboard, just create a View inside the ViewController and change it&#39;s Class to <code>KocomojoButton</code>.<br>This can then be connected to an <code>IBOutlet</code> and enabled / disabled images can be assigned like above.  </p>
 <p>&nbsp;</p>
-<h3 id="auto-show-experiences"><a class="header-link" href="#auto-show-experiences"></a>Auto Show Experiences</h3>
+<h3 id="auto-show-experiences-kocomojo-button-only-"><a class="header-link" href="#auto-show-experiences-kocomojo-button-only-"></a>Auto Show Experiences (Kocomojo Button only)</h3>
 <p>You can have experiences automatically pop up once the user is within range. </p>
 <p>To do this: </p>
 <div class="objc">
@@ -427,8 +435,9 @@ func bluetoothDisabled(notification: Notification) {
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
   <script>
-    $('.btn-toggle').click(function(evt) {
+    $('#lang-toggle').click(function(evt) {
         $(evt.target).blur()
+
         if($(evt.target).hasClass('active')) { return; }
         $(this).find('.btn').toggleClass('active');  
 
@@ -438,24 +447,10 @@ func bluetoothDisabled(notification: Notification) {
         } else {
           $('.objc').css('display', 'block')
           $('.swift').css('display', 'none')
-        }
-        
-        if ($(this).find('.btn-primary').size()>0) {
-          $(this).find('.btn').toggleClass('btn-primary');
-        }
-        if ($(this).find('.btn-danger').size()>0) {
-          $(this).find('.btn').toggleClass('btn-danger');
-        }
-        if ($(this).find('.btn-success').size()>0) {
-          $(this).find('.btn').toggleClass('btn-success');
-        }
-        if ($(this).find('.btn-info').size()>0) {
-          $(this).find('.btn').toggleClass('btn-info');
-        }
-        
-//        $(this).find('.btn').toggleClass('btn-default');
-          
+        }          
     });
+
+    
 
     $('.swift').css('display', 'none') // default to Obj-C 
   </script>

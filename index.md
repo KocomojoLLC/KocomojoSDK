@@ -116,7 +116,16 @@ The user can enter KocomojoSDK's interface either via an Experience or a Button.
 
 If the entire app is based on KocmomojoSDK (i.e. the first thing the user would see would be a screen designed in the editor), then you'd want to use `KocomojoExperience`.  
 
-If the app has functionality outside of KocomojoSDK, then your app will use `KocomojoButton` as it's entry point.
+If the app has existing functionality outside of KocomojoSDK, then your app will use `KocomojoButton` as it's entry point.
+
+&nbsp;
+
+<p style="font-size:2em;">Which implementation do you plan to use in your app?</p>
+
+<div class="btn-group btn-toggle" id="implementation-toggle" style="left:50%;margin-left:-25%;"> 
+  <button class="btn btn-lg btn-default">Experience</button>
+  <button class="btn btn-lg btn-default">Button</button>
+</div>
 
 &nbsp;
 
@@ -177,7 +186,7 @@ This can then be connected to an `IBOutlet` and enabled / disabled images can be
 
 &nbsp;
 
-### Auto Show Experiences 
+### Auto Show Experiences (Kocomojo Button only)
 
 You can have experiences automatically pop up once the user is within range. 
 

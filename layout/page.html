@@ -13,7 +13,7 @@
     <div class="row-fluid">
       <div class="col-xs-3">
         <div style="position:fixed;height:calc(100% - 120px)">
-          <div class="btn-group btn-toggle" style="margin-left:15px;"> 
+          <div class="btn-group btn-toggle" id="lang-toggle" style="margin-left:15px;"> 
             <button class="btn btn-lg btn-default active">Objective-C</button>
             <button class="btn btn-lg btn-default">Swift</button>
           </div>
@@ -30,8 +30,9 @@
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script type="text/javascript" src="{{asset 'js/bootstrap.min.js'}}"></script>
   <script>
-    $('.btn-toggle').click(function(evt) {
+    $('#lang-toggle').click(function(evt) {
         $(evt.target).blur()
+
         if($(evt.target).hasClass('active')) { return; }
         $(this).find('.btn').toggleClass('active');  
 
@@ -41,24 +42,10 @@
         } else {
           $('.objc').css('display', 'block')
           $('.swift').css('display', 'none')
-        }
-        
-        if ($(this).find('.btn-primary').size()>0) {
-          $(this).find('.btn').toggleClass('btn-primary');
-        }
-        if ($(this).find('.btn-danger').size()>0) {
-          $(this).find('.btn').toggleClass('btn-danger');
-        }
-        if ($(this).find('.btn-success').size()>0) {
-          $(this).find('.btn').toggleClass('btn-success');
-        }
-        if ($(this).find('.btn-info').size()>0) {
-          $(this).find('.btn').toggleClass('btn-info');
-        }
-        
-//        $(this).find('.btn').toggleClass('btn-default');
-          
+        }          
     });
+
+    
 
     $('.swift').css('display', 'none') // default to Obj-C 
   </script>
