@@ -1,3 +1,5 @@
+<a href="#" onClick="javascript:window.history.back();">&lt; Back</a>
+
 # KocomojoSDK for iOS
 
 ## Using KocomojoExperience
