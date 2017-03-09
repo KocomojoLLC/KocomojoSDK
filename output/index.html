@@ -14,8 +14,8 @@
       <div class="col-xs-3">
         <div style="position:fixed;height:calc(100% - 120px)">
           <div class="btn-group btn-toggle" id="lang-toggle" style="margin-left:15px;"> 
-            <button class="btn btn-lg btn-default active">Objective-C</button>
-            <button class="btn btn-lg btn-default">Swift</button>
+            <button class="btn btn-lg btn-default btn-objc">Objective-C</button>
+            <button class="btn btn-lg btn-default btn-swift">Swift</button>
           </div>
           <p>&nbsp;</p><ul class="nav nav-list" style="height:100%;overflow-y:scroll;">
     <li class="sidebar-header-1"><a href="#kocomojosdk-for-ios">KocomojoSDK for iOS</a></li>
@@ -125,15 +125,31 @@ sharedInstance.showPushNotifications = true; // this is optional, more informati
         if($(this).find('.active').text().toLowerCase() == 'swift') {
           $('.objc').css('display', 'none')
           $('.swift').css('display', 'block')
+
+          window.localStorage.setItem('lang', 'swift')
         } else {
           $('.objc').css('display', 'block')
           $('.swift').css('display', 'none')
+
+          window.localStorage.setItem('lang', 'objc')
         }          
-    });
+    })
 
-    
+    $(function() {
+      var lang = window.localStorage.getItem('lang')
+      if(!lang) { lang = 'objc' }
 
-    $('.swift').css('display', 'none') // default to Obj-C 
+      $('.btn-' + lang).addClass('active')
+
+      console.log(lang)
+      
+      if(lang == 'objc') {
+        $('.swift').css('display', 'none')
+      } else {
+        $('.objc').css('display', 'none')
+      }
+
+    })
   </script>
 </body>
 </html>
