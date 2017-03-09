@@ -123,3 +123,118 @@ KocomojoSDK.sharedInstance().pushTemplatePlural = "__NAMES__ are all available!!
 Note that if you want to generate your own Push Notifications using the names of the experiences as they come into range, you can implement a listener for `KocomojoExperiencesInRangeNotification` (more information in the next section)
 
 &nbsp;
+
+## Notifications 
+
+&nbsp;
+
+<div class="objc">
+<p>Main Experience Ready (`KocomojoMainExperienceReadyNotification`)</p>
+<p>Experiences In Range (`KocomojoExperiencesInRangeNotification`)</p>
+<p>Bluetooth Disabled (`KocomojoBluetoothDisabledNotification`)</p>
+</div>
+
+<div class="swift">
+<p>Main Experience Ready (`Notification.Name.KocomojoMainExperienceReady`)</p>
+<p>Experiences In Range (`Notification.Name..KocomojoExperiencesInRange`)</p>
+<p>Bluetooth Disabled (`Notification.Name.KocomojoBluetoothDisabled`)</p>
+</div>
+
+&nbsp;
+
+### Main Experience Ready
+
+When the main experience of your app is available, this will be posted.  The `NSDictionary` in `notification.data` contains `cached`, which lets you know if what it currently has available was loaded from cache or has just come from the server.  
+
+When the user initially runs the app, the SDK will need to download the main experience, so in this case it will be first called with `cached` as `false`.  
+
+Whenever the user starts the app after that, the initial posting of this notification will have `cached` as `true`.  However it will immediately attempt to load from the server -- so assuming all is well with connection to the server, it will be posted again with `cached` as `false`.  Also, when the user puts the app in the background and comes back, it will attempt to reload experiences from the server, thus sending `cached` as `false` here as well.  
+
+One thing to note is that `KocomojoExperience`'s UI will first display a spinner if it doesn't have any cached data.  The spinner will go away after data is loaded from the server and this notification is posted.  If there is cached data on a subsequent launch of the app, the spinner will not show and it will immediately show what was cached, not waiting for the server's response.  
+
+If you want `KocomojoExperience` only to display what was recently retrieved from the server, you can add a `UIView` on top of `KocomojoExperience` and hide it when this notification is posted with `cached` as `false`.  Due to the number of different possibilities for this overlay, it is not included in KocomojoSDK directly.  
+
+<div class="objc">
+<pre class="hljs"><code>[[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(mainExperienceReady:) name:KocomojoMainExperienceReadyNotification object:nil];
+
+...
+
+- (void)mainExperienceReady:(NSNotification &#42;)notification {
+    NSDictionary &#42;notificationDic = notification.object;
+    BOOL isCached = [[notificationDic objectForKey:@"cached"]boolValue];
+    
+    NSLog(@"%@", isCached ? @"Cached" : @"Not Cached");
+}</code></pre>
+</div>
+
+<div class="swift">
+<pre class="hljs"><code>NotificationCenter.default.addObserver(self, selector: #selector(self.mainExperienceReady), name: Notification.Name.KocomojoMainExperienceReady, object: nil); 
+
+...
+
+func mainExperienceReady(notification: Notification) {
+  let notificationDic = notification.object as! NSDictionary;
+  let isCachedNum = notificationDic["cached"] as! NSNumber;
+
+  NSLog("%@", isCachedNum.boolValue ? "Cached" : "Not Cached");
+}</code></pre>
+</div>
+
+&nbsp;
+
+
+### Experiences In Range
+
+When experiences come in range (or go out of range) this will be posted.  The `notification.data` will be an array containing `id`, `name`, and `inRange` (true or false) of each experience.  
+
+One thing to note is that this will only be posted with experiences who's `inRange` status changes.  Once an experiences comes `inRange`, the only other time it will appears in the `notification.data` array is when `inRange` becomes false.  
+
+<div class="objc">
+<pre class="hljs"><code>[[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(experiencesInRange:) name:KocomojoExperiencesInRangeNotification object:nil];
+
+...
+
+- (void)experiencesInRange:(NSNotification &#42;)notification {
+  NSArray &#42;experiencesInRangeArray = notification.object;
+  
+  NSLog(@"Experiences In Range: %@", experiencesInRangeArray);
+}</code></pre>
+</div>
+
+<div class="swift">
+<pre class="hljs"><code>NotificationCenter.default.addObserver(self, selector: #selector(self.experiencesInRange), name: Notification.Name.KocomojoExperiencesInRange, object: nil);
+
+...
+
+func experiencesInRange(notification: Notification) {
+  let experiencesInRangeArray = notification.object as! NSArray;
+
+  NSLog("Experiences In Range: %@", experiencesInRangeArray);
+}</code></pre>
+</div>
+
+&nbsp;
+
+### Bluetooth Off
+
+This is called if the user launches the app with Bluetooth disabled, or if they disable Bluetooth while in the app.
+
+<div class="objc">
+<pre class="hljs"><code>[[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(bluetoothDisabled:) name:KocomojoBluetoothDisabledNotification object:nil];
+
+...
+
+- (void)bluetoothDisabled:(NSNotification &#42;)notification {
+  // Notify the user to turn Bluetooth on
+}</code></pre>
+</div>
+
+<div class="swift">
+<pre class="hljs"><code>NotificationCenter.default.addObserver(self, selector: #selector(self.bluetoothDisabled), name: Notification.Name.KocomojoBluetoothDisabled, object: nil);
+
+...
+
+func bluetoothDisabled(notification: Notification) {
+  // Notify the user to turn Bluetooth on
+}</code></pre>
+</div>
