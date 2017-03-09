@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>KocomojoSDK for iOS</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="assets/css/pilcrow.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/hljs-github.min.css"/>
+    <link type="text/css" rel="stylesheet" href="assets/css/style.css"/>
+  </head>
+<body>
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="col-xs-3">
+        <div style="position:fixed;height:calc(100% - 120px)">
+          <div class="btn-group btn-toggle" id="lang-toggle" style="margin-left:15px;"> 
+            <button class="btn btn-lg btn-default active">Objective-C</button>
+            <button class="btn btn-lg btn-default">Swift</button>
+          </div>
+          <p>&nbsp;</p><ul class="nav nav-list" style="height:100%;overflow-y:scroll;">
+    <li class="sidebar-header-1"><a href="#kocomojosdk-for-ios">KocomojoSDK for iOS</a></li>
+    <li class="sidebar-header-2"><a href="#using-kocomojoexperience">Using KocomojoExperience</a></li>
+    <li class="sidebar-header-2"><a href="#info-plist">Info.plist</a></li>
+    <li class="sidebar-header-2"><a href="#local-push-notifications">Local Push Notifications</a></li>
+    <li class="sidebar-header-3"><a href="#frequency">Frequency</a></li>
+    <li class="sidebar-header-3"><a href="#push-templates">Push Templates</a></li>
+    <li class="sidebar-header-3"><a href="#open-app-from-push">Open app from Push</a></li>
+</ul>        </div>
+      </div>
+      <div class="col-xs-9 main"><h1 id="kocomojosdk-for-ios"><a class="header-link" href="#kocomojosdk-for-ios"></a>KocomojoSDK for iOS</h1>
+<h2 id="using-kocomojoexperience"><a class="header-link" href="#using-kocomojoexperience"></a>Using KocomojoExperience</h2>
+<div class="objc">
+<p>In the app&#39;s root View Controller, import KocomojoExperience.h:</p>
+<p><code>#import &lt;KocomojoSDK/KocomojoExperience.h&gt;</code></p>
+<p>Inside of <code>viewDidLoad</code>:</p>
+<pre class="hljs"><code>KocomojoExperience *experienceView = [[KocomojoExperience alloc]initWithFrame:self.view.frame];
+[self.view addSubview:experienceView];</code></pre>
+</div>
+
+<div class="swift">
+<p>In the app&#39;s root View Controller, import KocomojoSDK.KocomojoExperience:</p>
+<p><code>import KocomojoSDK.KocomojoExperience</code></p>
+<p>Inside of <code>viewDidLoad()</code>:</p>
+<pre class="hljs"><code>let experienceView = KocomojoExperience(frame:self.view.frame);
+self.view.addSubview(experienceView);</code></pre>
+</div>
+
+<p>&nbsp;</p>
+<h2 id="info-plist"><a class="header-link" href="#info-plist"></a>Info.plist</h2>
+<p>These are the key/value pairs you&#39;ll need to add to your Info.plist: </p>
+<p><strong>NSLocationAlwaysUsageDescription</strong> (<a href="https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18">more info</a>)</p>
+<p>For example: </p>
+<blockquote>
+<p>&quot;Please enable location tracking in order to receive promotion notifications&quot;</p>
+</blockquote>
+<p><strong>NSBluetoothPeripheralUsageDescription</strong> (<a href="https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW20">more info</a>)</p>
+<p>For example:</p>
+<blockquote>
+<p>&quot;Please enable bluetooth to monitor beacons in order to receive promotion notifications&quot;</p>
+</blockquote>
+<p>&nbsp;</p>
+<h2 id="local-push-notifications"><a class="header-link" href="#local-push-notifications"></a>Local Push Notifications</h2>
+<p>You can have KocomojoSDK send Push Notifications whenever an Experiences comes in range. </p>
+<p>To enable this:</p>
+<div class="objc">
+<pre class="hljs"><code>[[KocomojoSDK sharedInstance]setShowPushNotifications:YES];</code></pre>
+<p>And also:</p>
+<pre class="hljs"><code>- (void)application:(UIApplication &#42;)application didRegisterUserNotificationSettings:(UIUserNotificationSettings &#42;)notificationSettings
+{
+  [[KocomojoSDK sharedInstance] didRegisterUserNotificationSettings:notificationSettings];
+}</code></pre>
+</div>
+
+<div class="swift">
+<pre class="hljs"><code>KocomojoSDK.sharedInstance().showPushNotifications = true;</code></pre>
+<p>And also:</p>
+<pre class="hljs"><code>func application(_ application: UIApplication, didRegister notificationSettings: UIUserNotificationSettings)
+{
+  KocomojoSDK.sharedInstance().didRegister(notificationSettings);
+}</code></pre>
+</div>
+
+
+<p>&nbsp;</p>
+<h3 id="frequency"><a class="header-link" href="#frequency"></a>Frequency</h3>
+<p>You change the frequency of push notifications - how many seconds will need to pass after a push notification for another one to occur.  (Any notifications that would occur during this time is ignored as to not overwhelm the client.)  This defaults to 60 &#42; 60 &#42; 2 = 3600, or 2 hours.</p>
+<div class="objc">
+<pre class="hljs"><code>[[KocomojoSDK sharedInstance]setMinimumSecondsBetweenPushNotifications:[NSNumber numberWithInteger: 3600]];</code></pre>
+</div>
+
+<div class="swift">
+<pre class="hljs"><code>KocomojoSDK.sharedInstance().minimumSecondsBetweenPushNotifications = 3600</code></pre>
+</div>
+
+<p>&nbsp;</p>
+<h3 id="push-templates"><a class="header-link" href="#push-templates"></a>Push Templates</h3>
+<p>There are 2 templates that can be customized by the client.  One is for <code>pushTemplateSingular</code> (when there&#39;s one Experience in range) and the other is <code>pushTemplatePlural</code> (when there&#39;s more than one Experience in range.)</p>
+<p>They can be assigned like:</p>
+<div class="objc">
+<pre class="hljs"><code>[[KocomojoSDK sharedInstance] setPushTemplateSingular:@&quot;An awesome experience <strong>NAME</strong> has just entered your sphere&quot;];
+[[KocomojoSDK sharedInstance] setPushTemplatePlural:@&quot;<strong>NAMES</strong> are all available!!!&quot;];</code></pre>
+</div>
+
+<div class="swift">
+<pre class="hljs"><code>KocomojoSDK.sharedInstance().pushTemplateSingular = &quot;An awesome experience <strong>NAME</strong> has just entered your sphere&quot;;
+KocomojoSDK.sharedInstance().pushTemplatePlural = &quot;<strong>NAMES</strong> are all available!!!&quot;;</code></pre>
+</div>
+
+<p>&nbsp;</p>
+<h3 id="open-app-from-push"><a class="header-link" href="#open-app-from-push"></a>Open app from Push</h3>
+<div class="objc">
+<p>When the user opens a local push notification generated by the SDK, you can have it automatically &quot;touch&quot; the button for them by implementing the following:</p>
+<pre class="hljs"><code>- (void)application:(UIApplication &#42;)application didReceiveLocalNotification:(UILocalNotification &#42;)notification
+{
+  [[KocomojoSDK sharedInstance] didReceiveLocalNotification:notification];
+}</code></pre>
+</div>
+
+<div class="swift">
+<p>When the user opens a local push notification generated by the SDK, you can have it automatically &quot;touch&quot; the button for them by implementing the following:</p>
+<pre class="hljs"><code>func application(_ application: UIApplication, didReceive notification: UILocalNotification)
+{
+  KocomojoSDK.sharedInstance().didReceive(notification);
+}</code></pre>
+</div>
+
+
+
+<p>Note that if you want to generate your own Push Notifications using the names of the experiences as they come into range, you can implement a listener for <code>KocomojoExperiencesInRangeNotification</code> (more information in the next section)</p>
+<p>&nbsp;</p>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+  <script>
+    $('#lang-toggle').click(function(evt) {
+        $(evt.target).blur()
+
+        if($(evt.target).hasClass('active')) { return; }
+        $(this).find('.btn').toggleClass('active');  
+
+        if($(this).find('.active').text().toLowerCase() == 'swift') {
+          $('.objc').css('display', 'none')
+          $('.swift').css('display', 'block')
+        } else {
+          $('.objc').css('display', 'block')
+          $('.swift').css('display', 'none')
+        }          
+    });
+
+
+
+    $('.swift').css('display', 'none') // default to Obj-C 
+  </script>
+</body>
+</html>

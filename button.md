@@ -1,0 +1,158 @@
+<a href="#" onClick="javascript:window.history.back();">&lt; Back</a>
+
+# KocomojoSDK for iOS
+
+## Using KocomojoButton
+
+<div class="objc">
+<p>In the View Controller where you'd like to put the button import KocomojoButton.h:</p>
+
+<p>`#import <KocomojoSDK/KocomojoButton.h>`</p>
+
+<p>Inside of `viewDidLoad`:</p>
+
+<pre class="hljs"><code>KocomojoButton &#42;button = [[KocomojoButton alloc]initWithFrame:(CGRect){0, 0, 200, 200}];
+button.center = self.view.center;
+[button setEnabledImageName:@"buttonEnabled"];    // both images are 
+[button setDisabledImageName:@"buttonDisabled"];  // from xcassets
+[self.view addSubview:button];
+</code></pre>
+</div>
+
+<div class="swift">
+<p>In the View Controller where you'd like to put the button import KocomojoSDK.KocomojoButton:</p>
+
+<p>`import KocomojoSDK.KocomojoButton`</p>
+
+<p>Inside of `viewDidLoad()`:</p>
+
+<pre class="hljs"><code>let button = KocomojoButton(frame:CGRect(x: 0, y: 0, width: 200, height: 200));
+button.center = self.view.center;
+button.enabledImageName = "buttonEnabled";    // both images are 
+button.disabledImageName = "buttonDisabled";  // from xcassets
+self.view.addSubview(button);
+</code></pre>
+</div>
+
+You can also implement this in Storyboard, just create a View inside the ViewController and change it's Class to `KocomojoButton`.  
+This can then be connected to an `IBOutlet` and enabled / disabled images can be assigned like above.  
+
+&nbsp;
+
+### Auto Show Experiences
+
+You can have experiences automatically pop up once the user is within range. 
+
+To do this: 
+
+<div class="objc">
+<pre class="hljs"><code>[[KocomojoSDK sharedInstance]setAutomaticallyShowExperiences:YES];</code></pre>
+</div>
+
+<div class="swift">
+<pre class="hljs"><code>KocomojoSDK.sharedInstance().automaticallyShowExperiences = true;</code></pre>
+</div>
+
+&nbsp;
+
+## Info.plist 
+
+These are the key/value pairs you'll need to add to your Info.plist: 
+
+**NSLocationAlwaysUsageDescription** ([more info](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW18))
+
+For example: 
+
+> "Please enable location tracking in order to receive promotion notifications"
+
+**NSBluetoothPeripheralUsageDescription** ([more info](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW20))
+
+For example:
+
+> "Please enable bluetooth to monitor beacons in order to receive promotion notifications"
+
+&nbsp;
+
+## Local Push Notifications 
+
+You can have KocomojoSDK send Push Notifications whenever an Experiences comes in range. 
+
+To enable this:
+
+<div class="objc">
+<pre class="hljs"><code>[[KocomojoSDK sharedInstance]setShowPushNotifications:YES];</code></pre>
+<p>And also:</p>
+<pre class="hljs"><code>- (void)application:(UIApplication &#42;)application didRegisterUserNotificationSettings:(UIUserNotificationSettings &#42;)notificationSettings
+{
+  [[KocomojoSDK sharedInstance] didRegisterUserNotificationSettings:notificationSettings];
+}</code></pre>
+</div>
+
+<div class="swift">
+<pre class="hljs"><code>KocomojoSDK.sharedInstance().showPushNotifications = true;</code></pre>
+<p>And also:</p>
+<pre class="hljs"><code>func application(_ application: UIApplication, didRegister notificationSettings: UIUserNotificationSettings)
+{
+  KocomojoSDK.sharedInstance().didRegister(notificationSettings);
+}</code></pre>
+</div>
+
+
+&nbsp;
+
+
+### Frequency
+
+You change the frequency of push notifications - how many seconds will need to pass after a push notification for another one to occur.  (Any notifications that would occur during this time is ignored as to not overwhelm the client.)  This defaults to 60 &#42; 60 &#42; 2 = 3600, or 2 hours.
+
+<div class="objc">
+<pre class="hljs"><code>[[KocomojoSDK sharedInstance]setMinimumSecondsBetweenPushNotifications:[NSNumber numberWithInteger: 3600]];</code></pre>
+</div>
+
+<div class="swift">
+<pre class="hljs"><code>KocomojoSDK.sharedInstance().minimumSecondsBetweenPushNotifications = 3600</code></pre>
+</div>
+
+&nbsp;
+
+### Push Templates
+
+There are 2 templates that can be customized by the client.  One is for `pushTemplateSingular` (when there's one Experience in range) and the other is `pushTemplatePlural` (when there's more than one Experience in range.)
+
+They can be assigned like:
+
+<div class="objc">
+<pre class="hljs"><code>[[KocomojoSDK sharedInstance] setPushTemplateSingular:@"An awesome experience __NAME__ has just entered your sphere"];
+[[KocomojoSDK sharedInstance] setPushTemplatePlural:@"__NAMES__ are all available!!!"];</code></pre>
+</div>
+
+<div class="swift">
+<pre class="hljs"><code>KocomojoSDK.sharedInstance().pushTemplateSingular = "An awesome experience __NAME__ has just entered your sphere";
+KocomojoSDK.sharedInstance().pushTemplatePlural = "__NAMES__ are all available!!!";</code></pre>
+</div>
+
+&nbsp;
+
+### Open app from Push
+
+<div class="objc">
+<p>When the user opens a local push notification generated by the SDK, you can have it automatically "touch" the button for them by implementing the following:</p>
+<pre class="hljs"><code>- (void)application:(UIApplication &#42;)application didReceiveLocalNotification:(UILocalNotification &#42;)notification
+{
+  [[KocomojoSDK sharedInstance] didReceiveLocalNotification:notification];
+}</code></pre>
+</div>
+
+<div class="swift">
+<p>When the user opens a local push notification generated by the SDK, you can have it automatically "touch" the button for them by implementing the following:</p>
+<pre class="hljs"><code>func application(_ application: UIApplication, didReceive notification: UILocalNotification)
+{
+  KocomojoSDK.sharedInstance().didReceive(notification);
+}</code></pre>
+</div>
+
+
+
+Note that if you want to generate your own Push Notifications using the names of the experiences as they come into range, you can implement a listener for `KocomojoExperiencesInRangeNotification` (more information in the next section)
+
+&nbsp;
