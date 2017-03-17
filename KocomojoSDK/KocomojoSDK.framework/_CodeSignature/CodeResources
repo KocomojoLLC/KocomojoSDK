@@ -22,7 +22,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		JejnlJfVA4Yiq25AlXK1RWyEeys=
+		qjMycfhYBaDRjE16bbgbYFYb/+Y=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -110,15 +110,27 @@
 		</data>
 		<key>assets/node_modules/react-native/Libraries/CustomComponents/NavigationExperimental/assets/back-icon@2x.png</key>
 		<data>
-		YQmWVwhekbk+X2RKpCPehMO0Ldk=
+		fyhAnrjV5JZ0o7tt89t5OIcPTLk=
 		</data>
 		<key>assets/node_modules/react-native/Libraries/CustomComponents/NavigationExperimental/assets/back-icon@3x.png</key>
 		<data>
-		QKLfEeBLZVOc0niKWvbIrcWyxuM=
+		YQmWVwhekbk+X2RKpCPehMO0Ldk=
 		</data>
 		<key>assets/node_modules/react-native/Libraries/CustomComponents/NavigationExperimental/assets/back-icon@4x.png</key>
 		<data>
 		h6iaRr2yULlW7VdhK/SZVFO7UBM=
+		</data>
+		<key>assets/node_modules/react-navigation/src/views/assets/back-icon.png</key>
+		<data>
+		Ciudw8C4XF/Vg5gSjUu3KcexYUA=
+		</data>
+		<key>assets/node_modules/react-navigation/src/views/assets/back-icon@2x.png</key>
+		<data>
+		SqUMndMy+ujxP0h3qgBSGA+6oMk=
+		</data>
+		<key>assets/node_modules/react-navigation/src/views/assets/back-icon@3x.png</key>
+		<data>
+		F1Qn4kmFHrd2AAYVv63+1PH6kE8=
 		</data>
 		<key>assets/sdk/experiences/assets/facebook.png</key>
 		<data>
@@ -194,11 +206,11 @@
 		</data>
 		<key>main.jsbundle</key>
 		<data>
-		jmqVF490tWZNm4hesIoL1pq28a8=
+		clRI/RK0kU5+HxapcCOYJtW8hUg=
 		</data>
 		<key>main.jsbundle.meta</key>
 		<data>
-		ZbVomoeH/jVtD3ey75r5eS6W/Ng=
+		tn/lcimR0OKwRiHOTOoSDyIO2P0=
 		</data>
 		<key>strip-frameworks.sh</key>
 		<data>
@@ -486,22 +498,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			YQmWVwhekbk+X2RKpCPehMO0Ldk=
+			fyhAnrjV5JZ0o7tt89t5OIcPTLk=
 			</data>
 			<key>hash2</key>
 			<data>
-			xeXoDgmh6mz50dLBF7YNRharVPyFToLffO76MoOETlg=
+			sy0MsvX5EG4qN5eyCJTMmuBXN1YgSb0fT1H6KD3Xkj8=
 			</data>
 		</dict>
 		<key>assets/node_modules/react-native/Libraries/CustomComponents/NavigationExperimental/assets/back-icon@3x.png</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			QKLfEeBLZVOc0niKWvbIrcWyxuM=
+			YQmWVwhekbk+X2RKpCPehMO0Ldk=
 			</data>
 			<key>hash2</key>
 			<data>
-			GrXKevPCf+AB3RpyQfVtjn5ladOg7y5vToH8KQfVcMg=
+			xeXoDgmh6mz50dLBF7YNRharVPyFToLffO76MoOETlg=
 			</data>
 		</dict>
 		<key>assets/node_modules/react-native/Libraries/CustomComponents/NavigationExperimental/assets/back-icon@4x.png</key>
@@ -513,6 +525,39 @@
 			<key>hash2</key>
 			<data>
 			yxFa1GbJewG0cdCqfhCkFthTjRQEENRWSwgGsiXcyFQ=
+			</data>
+		</dict>
+		<key>assets/node_modules/react-navigation/src/views/assets/back-icon.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Ciudw8C4XF/Vg5gSjUu3KcexYUA=
+			</data>
+			<key>hash2</key>
+			<data>
+			1p6/RZIrZGXtVs8IJ2XdQGXiBcAR/bXkszF0ThORIVE=
+			</data>
+		</dict>
+		<key>assets/node_modules/react-navigation/src/views/assets/back-icon@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			SqUMndMy+ujxP0h3qgBSGA+6oMk=
+			</data>
+			<key>hash2</key>
+			<data>
+			x+2tEwkFCF0aO27Piiat8K9XNSh39vt03h2MPaEuMek=
+			</data>
+		</dict>
+		<key>assets/node_modules/react-navigation/src/views/assets/back-icon@3x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			F1Qn4kmFHrd2AAYVv63+1PH6kE8=
+			</data>
+			<key>hash2</key>
+			<data>
+			sIS/86xWS2+7Eqle5c4r2A2qK9MrzDqzoHFdkVGPV44=
 			</data>
 		</dict>
 		<key>assets/sdk/experiences/assets/facebook.png</key>
@@ -717,22 +762,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			jmqVF490tWZNm4hesIoL1pq28a8=
+			clRI/RK0kU5+HxapcCOYJtW8hUg=
 			</data>
 			<key>hash2</key>
 			<data>
-			wpeie2J3FeNupQcTY1/+4bTaLW6LPliUozZv7ss1GG4=
+			6SFdTCE5wXZ65AtBx/UAa00c2goWDg3bmw/fxhz4BJA=
 			</data>
 		</dict>
 		<key>main.jsbundle.meta</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ZbVomoeH/jVtD3ey75r5eS6W/Ng=
+			tn/lcimR0OKwRiHOTOoSDyIO2P0=
 			</data>
 			<key>hash2</key>
 			<data>
-			L3+5rsFrsDqRJQsDuvAvr21SSPSeV7qRpd7IWugo44I=
+			GrdlCrCvCAGcimhTDvFhKWSW7g8Z0Ad79AmBzqWP8qI=
 			</data>
 		</dict>
 		<key>strip-frameworks.sh</key>
