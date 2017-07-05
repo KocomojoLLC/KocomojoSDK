@@ -12,6 +12,8 @@
 #import <KocomojoSDK/KocomojoButton.h>
 #import <KocomojoSDK/KocomojoExperience.h>
 
+typedef void(^OauthBlock)(NSError * _Nullable error, NSString * _Nullable code);
+
 typedef void(^ApiValidationBlock)(BOOL isValid);
 
 NS_ASSUME_NONNULL_BEGIN
@@ -38,8 +40,11 @@ extern NSString * const KocomojoMainExperienceReadyNotification;
 
 + (instancetype)sharedInstance;
 - (void)validateApiKey:(ApiValidationBlock)validationBlock;
+- (void)loginWithGoogle:(UIViewController *)viewController loginCallback:(OauthBlock)callback;
+- (BOOL)application:(UIApplication *)application openURL:(nonnull NSURL *)url options:(nonnull NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options;
 - (void)didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings;
 - (void)didReceiveLocalNotification:(UILocalNotification *)notification;
+
 
 @end
 
