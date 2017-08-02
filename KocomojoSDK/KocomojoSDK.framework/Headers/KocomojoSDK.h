@@ -12,7 +12,7 @@
 #import <KocomojoSDK/KocomojoButton.h>
 #import <KocomojoSDK/KocomojoExperience.h>
 
-typedef void(^OauthBlock)(NSError * _Nullable error, NSString * _Nullable code);
+typedef void(^OauthBlock)(NSError * _Nullable error, NSDictionary * _Nullable data);
 
 typedef void(^ApiValidationBlock)(BOOL isValid);
 
