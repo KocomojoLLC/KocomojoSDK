@@ -378,7 +378,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		bmTGhjA+YS4rU+yhWzrHalyPLMI=
+		2aIey4hO1AmnbL6djcNAIOGMgCM=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -1144,13 +1144,17 @@
 		<data>
 		F1Qn4kmFHrd2AAYVv63+1PH6kE8=
 		</data>
+		<key>assets/sdk/assets/close.png</key>
+		<data>
+		ia7Um1pd9vQxMBaugLvQiuh7gQI=
+		</data>
 		<key>main.jsbundle</key>
 		<data>
-		tsX+tRWWIwjIZ/9YnpuPZ97x5hQ=
+		qvgx5/P9ey/nMAA7BtkvTDVL3DE=
 		</data>
 		<key>main.jsbundle.meta</key>
 		<data>
-		eCM7VbEsuUKyerzUy61LxBNs6Zk=
+		zRTADIUzFgAWnKOp8VpphNatDcU=
 		</data>
 		<key>strip-frameworks.sh</key>
 		<data>
@@ -3672,26 +3676,37 @@
 			sIS/86xWS2+7Eqle5c4r2A2qK9MrzDqzoHFdkVGPV44=
 			</data>
 		</dict>
+		<key>assets/sdk/assets/close.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			ia7Um1pd9vQxMBaugLvQiuh7gQI=
+			</data>
+			<key>hash2</key>
+			<data>
+			SVbjYgpav9R46StWnmu8zTZBHJyvp4vEA8fk1DanX7o=
+			</data>
+		</dict>
 		<key>main.jsbundle</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			tsX+tRWWIwjIZ/9YnpuPZ97x5hQ=
+			qvgx5/P9ey/nMAA7BtkvTDVL3DE=
 			</data>
 			<key>hash2</key>
 			<data>
-			6x/8jG48crOlp1XmHtjtQoI2jOzKeh1e21/NedAitjI=
+			1siWfKp42Y85M7flO1Rwmwywk/CkWu/PI22pcnLSdcc=
 			</data>
 		</dict>
 		<key>main.jsbundle.meta</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			eCM7VbEsuUKyerzUy61LxBNs6Zk=
+			zRTADIUzFgAWnKOp8VpphNatDcU=
 			</data>
 			<key>hash2</key>
 			<data>
-			5G48PJWy5TfKwkEsfSYlJZC6c/CQKUapLb6MEIp5Tlc=
+			8dvz9/nMxpNP4gSh5fkcxLQ7kHgfylApUxzcnlHn+jI=
 			</data>
 		</dict>
 		<key>strip-frameworks.sh</key>
