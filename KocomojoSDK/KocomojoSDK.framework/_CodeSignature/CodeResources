@@ -378,7 +378,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		COx4zDU+LlvBpIZLvaXZTA629RI=
+		Vs5ASaDCf1HAUPjZurc9VhnzbD8=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -678,7 +678,7 @@
 		</data>
 		<key>Stripe.bundle/Info.plist</key>
 		<data>
-		63tGy7UG6HrRSZ6MMOUaoBuAx9Q=
+		SPULpCz4jbkU+kYA04/j7RJ2FZI=
 		</data>
 		<key>Stripe.bundle/Localizations/de.lproj/Localizable.strings</key>
 		<dict>
@@ -1134,11 +1134,11 @@
 		</data>
 		<key>main.jsbundle</key>
 		<data>
-		fmRuNrnRC/Sju+vzoRkrZuDqLsY=
+		I9zXUahq9Tge6FJ812ObL+vMEB0=
 		</data>
 		<key>main.jsbundle.meta</key>
 		<data>
-		lhE94V9/Yi3Gu1DH0FyiX+4zCf4=
+		Yziz+sgIVRpaeCnYFna+sKk3+98=
 		</data>
 		<key>strip-frameworks.sh</key>
 		<data>
@@ -2565,11 +2565,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			63tGy7UG6HrRSZ6MMOUaoBuAx9Q=
+			SPULpCz4jbkU+kYA04/j7RJ2FZI=
 			</data>
 			<key>hash2</key>
 			<data>
-			dLQQ7Etn/P1VOwwDA10rUVB9AOxdZA0wht2IPKPAIm8=
+			RO6Ra2gEzCMBC0GdQeBm0LlLee859olsF6H44ld3iGw=
 			</data>
 		</dict>
 		<key>Stripe.bundle/Localizations/de.lproj/Localizable.strings</key>
@@ -3631,22 +3631,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			fmRuNrnRC/Sju+vzoRkrZuDqLsY=
+			I9zXUahq9Tge6FJ812ObL+vMEB0=
 			</data>
 			<key>hash2</key>
 			<data>
-			JD0/4SbdKfkB5+TOUXGRYDPfDxm6u0k06Z3FhvZULhY=
+			veIAR5RfSk2KkxOw8asg4KJs3FAfZ/ZsqJdLliMY98A=
 			</data>
 		</dict>
 		<key>main.jsbundle.meta</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			lhE94V9/Yi3Gu1DH0FyiX+4zCf4=
+			Yziz+sgIVRpaeCnYFna+sKk3+98=
 			</data>
 			<key>hash2</key>
 			<data>
-			xmavUE6NCiBu4Gq+CNMP0QFwCoYKpEbcTDtCnxdrz7M=
+			HgAFVbaxbO/ii39rrFNLkwAvCykJSjjocIh31gzGFAM=
 			</data>
 		</dict>
 		<key>strip-frameworks.sh</key>
