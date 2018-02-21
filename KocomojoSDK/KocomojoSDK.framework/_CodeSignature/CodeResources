@@ -378,7 +378,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		Vs5ASaDCf1HAUPjZurc9VhnzbD8=
+		AcFHTCUFxrL+5HVNIbDZmhhulcg=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -1132,13 +1132,29 @@
 		<data>
 		ia7Um1pd9vQxMBaugLvQiuh7gQI=
 		</data>
+		<key>assets/sdk/assets/muted.png</key>
+		<data>
+		RkDyD+HiYk6a/3PBGWWgl0kVnXo=
+		</data>
+		<key>assets/sdk/assets/pause.png</key>
+		<data>
+		rmHOD08TTq18L0UlKYgo7ZJQmsg=
+		</data>
+		<key>assets/sdk/assets/play.png</key>
+		<data>
+		yzOJfhtKlV9Mxxctdh/dafmBj6g=
+		</data>
+		<key>assets/sdk/assets/unmuted.png</key>
+		<data>
+		n6evYHX5zd+gNzwiQAvPGrMNrLw=
+		</data>
 		<key>main.jsbundle</key>
 		<data>
-		I9zXUahq9Tge6FJ812ObL+vMEB0=
+		aIj2ZkU30ZHgkkcmyVf1+xYzzTA=
 		</data>
 		<key>main.jsbundle.meta</key>
 		<data>
-		Yziz+sgIVRpaeCnYFna+sKk3+98=
+		KIS/ilzusUiAcTDKWvN1Ccf+sNI=
 		</data>
 		<key>strip-frameworks.sh</key>
 		<data>
@@ -3627,26 +3643,70 @@
 			SVbjYgpav9R46StWnmu8zTZBHJyvp4vEA8fk1DanX7o=
 			</data>
 		</dict>
+		<key>assets/sdk/assets/muted.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			RkDyD+HiYk6a/3PBGWWgl0kVnXo=
+			</data>
+			<key>hash2</key>
+			<data>
+			4FM2Pj4CHTId1AhXQdWAjmmoseBgzon9XAMh7m6H5eU=
+			</data>
+		</dict>
+		<key>assets/sdk/assets/pause.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			rmHOD08TTq18L0UlKYgo7ZJQmsg=
+			</data>
+			<key>hash2</key>
+			<data>
+			6y4zPBi6Npoi4/raUYG4OZacPknfv6j3IyNK3NIiANY=
+			</data>
+		</dict>
+		<key>assets/sdk/assets/play.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			yzOJfhtKlV9Mxxctdh/dafmBj6g=
+			</data>
+			<key>hash2</key>
+			<data>
+			oA1ioaE9A8KB3Jc16yZD8Jw/3AjaWym3x+3s32OHH8g=
+			</data>
+		</dict>
+		<key>assets/sdk/assets/unmuted.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			n6evYHX5zd+gNzwiQAvPGrMNrLw=
+			</data>
+			<key>hash2</key>
+			<data>
+			etbAR6eZhJAgN3xIe/+CGbx1dKSbJg2+UWZEjpYQbRM=
+			</data>
+		</dict>
 		<key>main.jsbundle</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			I9zXUahq9Tge6FJ812ObL+vMEB0=
+			aIj2ZkU30ZHgkkcmyVf1+xYzzTA=
 			</data>
 			<key>hash2</key>
 			<data>
-			veIAR5RfSk2KkxOw8asg4KJs3FAfZ/ZsqJdLliMY98A=
+			gf+w37iaG0Gck2xjZdoHQZw6acXq5zxcRcmjVpw8Zv0=
 			</data>
 		</dict>
 		<key>main.jsbundle.meta</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Yziz+sgIVRpaeCnYFna+sKk3+98=
+			KIS/ilzusUiAcTDKWvN1Ccf+sNI=
 			</data>
 			<key>hash2</key>
 			<data>
-			HgAFVbaxbO/ii39rrFNLkwAvCykJSjjocIh31gzGFAM=
+			4Co3KkNMOEp+ISeQTaxtQYtR4ivWouPjKGGfbwXjWsE=
 			</data>
 		</dict>
 		<key>strip-frameworks.sh</key>
